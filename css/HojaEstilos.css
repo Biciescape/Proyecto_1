@@ -1,0 +1,44 @@
+
+.div{
+
+	background-color:yellow; 
+
+}
+
+.div2{
+
+	font-family: "Serif";
+	color:black;
+	width: 200px;
+	border: 1px solid grey;
+	padding: 15px 20px;
+
+
+}
+
+.div3{
+	color:#302A29;
+	background-color: white;
+	float: right;
+
+
+}
+.div4{
+	background-color:black;
+	height: 40px;
+	text-align:center; 
+	padding: 30px;
+}
+.div5{
+	background-color: white;
+	height: 650px; 
+	width: 1300px; 
+	left:261px; 
+	top: 116px; 
+	position: absolute; 
+	visibility: visible;
+	z-index:10;
+	text-align: center;
+
+
+}
