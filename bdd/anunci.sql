@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2017 a las 18:26:17
+-- Tiempo de generación: 20-10-2017 a las 15:25:16
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -71,7 +71,7 @@ INSERT INTO `anunci` (`anu_id`, `anu_titol`, `anu_data_anunci`, `anu_data_robato
 (18, 'Orbea Carpe 40', '2016-11-22', '2016-11-21', 'Badalona', 'Me robaron mi bici a las 9 de la noche en la Plaça dels Països Catalans.', 'Orbea', 'Orbea Carpe 40', 'Amarillo', '-', 'Bicicleta Orbea Carpea 40 amarillo.', '2017 - G425', 'orbeacarpe40', '30.00', 'Bicicleta'),
 (19, 'Guantes Largos Power WS Gore', '2017-09-01', '2017-08-30', 'Badalona', 'Me robaron mis guantes de ciclista a medianoche mientras iba por la avenida Eduard Maristany.', 'Gore', 'Power WS', 'Blanco', '-', 'Guantes de color blancos y negros, con detalles rojos de la marca Power WS Gore', 'GWPOWE', 'guantespowerwsgore', '15.00', 'Guantes'),
 (20, 'Chaqueta Power Gore-tex AS Lady Gore', '2017-08-25', '2017-08-23', 'Sta. Coloma de Gramanet', 'Me robaron la chaqueta de ciclista por el Raval a medianoche.', 'Gore', 'Power AS Lady Gore', 'Verde', '-', 'Chaqueta de ciclista color verde marca Power Gore-tex AS Lady Gore', '-', 'goretexasladygore', '20.00', 'Chaqueta'),
-(21, 'Chaqueta Power Gore-tex AS Lady Gore', '2017-08-25', '2017-08-23', 'Sta. Coloma de Gramanet', 'Me robaron la chaqueta de ciclista por el Raval a medianoche.', 'Gore', 'Power AS Lady Gore', 'Verde', '-', 'Chaqueta de ciclista color verde marca Power Gore-tex AS Lady Gore', '-', 'goretexasladygore', '20.00', 'Chaqueta');
+(21, 'Chaleco Gore Power AS Lady Windstopper', '2017-08-25', '2017-08-23', 'Sta. Coloma de Gramanet', 'Me robaron la chaqueta de ciclista a las cinco de la mañana por la plaza de Monterrey.', 'Gore', 'Power AS Lady Windstopper', 'Rojo', '-', 'Chaqueta de ciclista color rojo con detalles negros de la marca Gore. En concreto Gore Power AS Lady Windstopper.', '-', 'powerasladywindstopper', '30.00', 'Chaqueta');
 
 --
 -- Índices para tablas volcadas
@@ -91,7 +91,7 @@ ALTER TABLE `anunci`
 -- AUTO_INCREMENT de la tabla `anunci`
 --
 ALTER TABLE `anunci`
-  MODIFY `anu_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `anu_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
