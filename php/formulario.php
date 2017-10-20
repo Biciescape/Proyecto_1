@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title>Inicio</title>
-	<link rel="stylesheet" type="text/css" href="HojaEstilos.css">
+	<link rel="stylesheet" type="text/css" href="css/HojaEstilos.css">
+	<meta charset="utf-8">
+
 </head>
 <body>
 	
 	<!--Pasamos el formulario en la página formulario1.php !-->
-	<form action"formulario1.php" method="REQUEST">
+	<form action="formulario1.php" method="REQUEST">
 		<div class="div4">	
 			<input type="text" name"producto" size="40" ><br></br>
 		</div>
@@ -56,19 +58,6 @@
 					echo "No hay colores que mostrar";
 				}
 				echo "<p>";
-
-				//$conexion = mysqli_query($conexion, $a);
-				//if(mysqli_num_rows($resultados)>0){
-
-					//echo "Marcas:<br><br/>";
-					//while($marcas = mysqli_fetch_array($conexion)){
-
-						//echo "<select>\"option value=\"filtro_c\">$marcas[anu_marca]</option></select>";
-
-					//}
-					//} else {
-						//echo "No hay categorías que mostrar";
-					//}
 
 				echo "Marcas<br></br>";
   				
