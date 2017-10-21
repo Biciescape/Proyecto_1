@@ -9,9 +9,11 @@
 	$marca=$_REQUEST['marca'];
 	$localidad=$_REQUEST['ciudad'];
 	$color=$_REQUEST['colores'];
-	
+	$anuncio=$_REQUEST['producto'];
+
 	$and=false;
 	$and1=false;
+	$and2=false;
 
 	$string="";
 	$string1="";
@@ -19,7 +21,7 @@
 
 	/*Si el usuario no envía ningún filtro (es decir, sólo le da al botón de enviar), será prácticamente como volver a la página inicial: porque no hay ningún filtro seleccionado y se muestran los anuncios de más nuevos a más antiguos*/
 
-	if (($marca=="")&&($localidad=="")&&($color=="")){
+	if (!isset($anuncio)) {
 		header("Location:formulario.php");
 	}else{
 		//////////// A PARTIR DE AQUÍ HACEMOS LA CONEXIÓN ////////////
@@ -57,24 +59,61 @@
 				if (($and==true)||($and1==true)) {
 					$string2="AND anu_ubicacio_robatori='$localidad'";
 				}
+				$and2=true;
 			}
 
-			$j="SELECT * FROM anunci $string $string1 $string2";
-			echo $j;
+			/*En el caso de los checkboxs guardamos las variables en un array (al que hemos guardado en la variable tal para usarlo con más facilidad)*/
+			$tal=$_REQUEST['talla'];
+			//Hacemos que guarde los valores (las tallas seleccionadas) en la variable $t
+			foreach ($tal as $t) {
+				//Ya que sólo son 4 tallas, contamos los valores de la array
+				if (count($tal)==1) {
+				//En el caso en que sea una lo dejamos con un WHERE y la talla (dando por hecho que no han buscado otra cosa como marca, ciudad, etc).
+					$string3="WHERE anu_talla='$t'";
+					//En el caso en el que ya se hayan hecho otras busquedas lo añadimos con un AND
+					if (($and==true)||($and1==true)||($and2==true)) {
+						$string3="AND anu_talla='$t'";
+					}
+				}
+				//En el caso en que sean más de un valor se ha enlazar con un or según la posición
+				if (count($tal)==2) {
+					//Por eso si sabemos que los valores del array son solo dos los cogemos por la posición
+					$string3="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
+					//De nuevo: si ya han elegido otros filtros, se añade con un and, adelantandonos con las posiciones.
+					if (($and==true)||($and1==true)||($and2==true)) {
+						$string3="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
+					}
+				}
+				//A partir de aquí es el mismo proceso una y otra vez
+				if (count($tal)==3) {
+					$string3="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
+					if (($and==true)||($and1==true)||($and2==true)) {
+						$string3="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
+					}
+				}
 
-			//Hacemos la consulta a la BDD, con la dirección de la BDD y con qué queremos consultar
+				if (count($tal)==4) {
+					$string3="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]'";
+					if (($and==true)||($and1==true)||($and2==true)) {
+						$string3="AND anu_talla='$tal[0]' OR (anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]')";
+					}
+				}
+			}//fin del foreach
+
+			$j="SELECT * FROM anunci $string $string1 $string2 $string3";
+
+			//Creamos la variable consulta, que contiene la conexion a la bdd y el qué va a buscar
 			$consulta = mysqli_query($conexion, $j);
 
-			//Creamos la variable mysqli_num_rows para mostrar cuántos objetos coinciden con la búsqueda
-			$filas=mysqli_num_rows($consulta);
+			//Con la variable total vemos cuantos anuncios ha podido encontrar
+			$total=mysqli_num_rows($consulta);
 
-			//En el caso en el que no hayan productos que mostrar, se muestra el siguiente mensaje
-			if ($filas==0) {
+			//Si no encuentra ninguno da el mensaje de que no se ha encontrado nada
+			if ($total==0) {
 				echo "Lo sentimos, no hemos podido encontrar el anuncio que buscaba :(";
-
 			}else{
-				//La variable filas se puede usar para ordenar cuantos anuncios podemos mostrar porque muestra el número de anuncios encontrados según el filtro.
-				//echo "$filas";
+				//También la podemos usar (la variable $total) para poder ordenar cuantos anuncios se muestran en un futuro
+				//echo "$total";
 
 				//Mostramos los detalles del anuncio
 				while($anunci=mysqli_fetch_array($consulta)){
@@ -92,7 +131,7 @@
 					$des= "Descripción: $anunci[anu_descripcio]<br/>";
 					echo "Número de serie: $anunci[anu_numero_serie]<br/>";
 					echo "Foto: <img src='img/$anunci[anu_foto].jpg'><br/>";
-					echo "Categoría: $anunci[anu_categoria]<br/>";
+					echo "Talla: $anunci[anu_talla]<br/>";
 					echo "Compensación: $anunci[anu_compensacio]€<br/>";
 					echo "<br>";
 				}//fin del while
