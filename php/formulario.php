@@ -25,8 +25,8 @@
 
 
 			<div class="div2">
-				<div>
-				<p>Filtrar
+				<div class="color">
+				FILTRAR
 				</div>
 				<?php
 				$conexion=mysqli_connect("localhost", "root", "", "bd_biciescapa");
@@ -38,22 +38,7 @@
 				} else {
 				//informamos a la BD que toda consulta que realicemos, la queremos con los contenidos pasados a utf8
 					$acentos=mysqli_query($conexion, "SET NAMES 'utf8'");
-					$q = "Select distinct(anu_color) from anunci ORDER BY anu_color";
-					$resultados = mysqli_query($conexion, $q);
-					if(mysqli_num_rows($resultados)>0){
-					//Ponemos un select para hacer un despegable y un option para que en el principio muetre Cualquiera
-						echo "<br>Colores:<br><br/>";
-						echo "<select name='colores'>";
-						echo "<option>Cualquiera</option>";
-						while($colores= mysqli_fetch_array($resultados)){
-						//Metemos la consulta de colores en el option, lo mostramos con la variable colores y despues lo cerramos fuera del while el select
-							echo "<option>$colores[anu_color]</option>";
-						//echo "<input type='checkbox' name='color' >$categoria[anu_color]<br></br>";
-						}
-						echo "</select>";
-					} else {
-						echo "No hay colores que mostrar";
-					}
+					
 				//Guardar en la variable $q la consulta
 
 				// Con un if mostramos toda la consulta hasta que llegue a 0 consultas
