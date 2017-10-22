@@ -142,7 +142,7 @@
 
 					/*Si el usuario no envía ningún filtro (es decir, sólo le da al botón de enviar), será prácticamente como volver a la página inicial: porque no hay ningún filtro seleccionado y se muestran los anuncios de más nuevos a más antiguos*/
 
-					if (($anuncio=="")&&($marca=="Cualquiera")&&($localidad=="Cualquiera")&&($color=="Cualquiera")) {
+					if (($anuncio=="")&&($marca=="Cualquiera")&&($localidad=="Cualquiera")&&($color=="Cualquiera")&&(!isset($_REQUEST['talla']))) {
 						header("Location:formulario.php");
 					}else{
 						//////////// A PARTIR DE AQUÍ HACEMOS LA CONEXIÓN ////////////
