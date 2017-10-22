@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2017 a las 02:47:43
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.9
+-- Tiempo de generación: 22-10-2017 a las 13:01:27
+-- Versión del servidor: 10.1.28-MariaDB
+-- Versión de PHP: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,11 +51,11 @@ CREATE TABLE `anunci` (
 --
 
 INSERT INTO `anunci` (`anu_id`, `anu_titol`, `anu_data_anunci`, `anu_data_robatori`, `anu_ubicacio_robatori`, `anu_descripcio_robatori`, `anu_marca`, `anu_model`, `anu_color`, `anu_antiguitat`, `anu_descripcio`, `anu_numero_serie`, `anu_foto`, `anu_compensacio`, `anu_talla`) VALUES
-(1, 'Orbea MX 10 29', '2017-10-15', '2017-10-11', 'El Prat del Llobregat', 'Me robaron la bicicleta en Sant Cosme con una navaja y no pude hacer nada.', 'Orbea', 'MX 10', 'Negro', '-', 'Bicicleta negra Orbea MX 10 con ruedas de 29 pulgadas.', '2017 - G211', 'orbeamx1029', '30.00', 'M'),
+(1, 'Orbea MX 10 29', '2017-10-15', '2017-10-11', 'El Prat de Llobregat', 'Me robaron la bicicleta en Sant Cosme con una navaja y no pude hacer nada.', 'Orbea', 'MX 10', 'Negro', '-', 'Bicicleta negra Orbea MX 10 con ruedas de 29 pulgadas.', '2017 - G211', 'orbeamx1029', '30.00', 'M'),
 (2, 'Bergamont Revox Pro Carbon 29', '2017-09-02', '2017-09-27', 'Hospitalet de Llobregat', 'Al entrar al metro de la Florida perdí las gafas en la parada del metro de la L1 El Clot.', 'Bergamont', 'Revox Pro Carbon 29', 'Amarillo', '-', 'Bicicleta de montaña, viene montada con un cuadro de carbono ligero. Color Amarillo', '1630655', 'revoxpro', '20.00', 'S'),
 (3, 'Camber Comp 29 Specialized ', '2017-10-04', '2017-10-05', 'Barcelona', 'Me robaron la bicileta mientras me descuidé en plaza Cataluña, cerca del metro frente al Corte Inglés.', 'Specialized', 'Camber Comp 29', 'Rojo', '-', 'Bicicleta de Color blanco y talla M', '93217-5003', 'cambercomp', '30.00', 'M'),
 (4, 'Orbea Rallon X30', '2017-10-14', '2017-09-15', 'Hospitalet de Llobregat', 'Me robaron la bicicleta de montaña cuando volvía a casa con una navaja.', 'Orbea', 'Rallon X30', 'Azul', '-', 'Bicicleta de montaña Orbea Rallon X 30 de color amarillo.', '2017 - G268', 'orbearallonx30', '50.00', 'L'),
-(5, 'Orbea MX 50 29', '2017-08-14', '2017-08-10', 'El Prat del Llobregat', 'Me robaron la bicileta en Sant Cosme y aún no he sabido nada de ellas.', 'Orbea', 'MX 50 29', 'Negro', '-', 'Bicicleta para montaña con posición del pedaleo que reduce la fatiga. \r\nColor blanco y talla M', '2017 - G201', 'mx50', '50.00', 'M'),
+(5, 'Orbea MX 50 29', '2017-08-14', '2017-08-10', 'El Prat de Llobregat', 'Me robaron la bicileta en Sant Cosme y aún no he sabido nada de ellas.', 'Orbea', 'MX 50 29', 'Negro', '-', 'Bicicleta para montaña con posición del pedaleo que reduce la fatiga. \r\nColor blanco y talla M', '2017 - G201', 'mx50', '50.00', 'M'),
 (6, 'Haibike SDURO HardNine 4.0 400Wh', '2017-10-10', '2017-09-29', 'Girona', 'Me robaron la bicicleta cerca de la catedral de Girona a las 7 de la tarde.', 'Haibike', 'SDURO HardNine 4.0 400Wh', 'Negro', '-', 'Bicicleta con cuadro de aluminio y componentes Shimano. Color negro y talla S', '4542009740', 'haibikesduro', '70.00', 'S'),
 (7, 'Orbea Oiz M30 27', '2017-05-17', '2017-05-01', 'Girona', 'Me robaron la bicicleta cerca de la residencia de estudiantes de la Universidad de Girona a las 9.', 'Orbea', 'Oiz M30 27', 'Negro', '-', 'Bicicleta de talla S y de color Negro.', '2017 - G251', 'oizm3027', '40.00', 'S'),
 (8, 'Giant Talon 1 LTD 27.5', '2017-07-02', '2017-07-01', 'Tarragona', 'Me robaron la bicicleta en Vilaseca con una navaja por la madrugada, a las 5 de la mañana.', 'Giant', 'Talon 1 LTD 27.', 'Blanco', '-', 'Bicicleta de montaña deportiva. Color blanco y Talla S ', '2016 - 62040214', 'talon1', '40.00', 'S'),
@@ -71,7 +71,16 @@ INSERT INTO `anunci` (`anu_id`, `anu_titol`, `anu_data_anunci`, `anu_data_robato
 (18, 'Orbea Carpe 40', '2016-11-22', '2016-11-21', 'Badalona', 'Me robaron mi bici a las 9 de la noche en la Plaça dels Països Catalans.', 'Orbea', 'Carpe 40', 'Amarillo', '-', 'Bicicleta Orbea Carpea 40 amarillo.', '2017 - G425', 'orbeacarpe40', '30.00', 'XL'),
 (19, 'Conor WRC Pro 25aniv. 29', '2017-09-01', '2017-08-30', 'Badalona', 'Me robaron la bicicleta a medianoche mientras iba por la avenida Eduard Maristany.', 'Conor', 'Advanced 1 27.5\"+ 2017', 'Blanco', '-', 'Bicicleta de cuadro de aluminio, color blanco y marca M', '2016 - 610630NG', 'conorwrcpro', '15.00', 'M'),
 (20, 'Giant XtC Advanced 1.5 LTD 27.5', '2017-08-25', '2017-08-23', 'Sta. Coloma de Gramanet', 'Me robaron la bicicleta de ciclista por el Raval a medianoche.', 'Giant', 'XtC Advanced 1.5 LTD 27.5', 'Azul', '-', 'Bicicleta de ruedas 27.5 con, de color Azul y talla XL.', '2016 - 620306', 'xtcadvanced', '20.00', 'XL'),
-(21, 'S-Works Epic XTR Di2 29 Specialized', '2017-08-25', '2017-08-23', 'Sta. Coloma de Gramanet', 'Me robaron la chaqueta de ciclista a las cinco de la mañana por la plaza de Monterrey.', 'Specialized', 'S-Works Epic XTR Di2 29 ', 'Rojo', '-', 'Bicicleta de la marca Specialized, color rojo y talla M.', '2018 90318-00', 'sworksepicxtr', '30.00', 'M');
+(21, 'S-Works Epic XTR Di2 29 Specialized', '2017-08-25', '2017-08-23', 'Sta. Coloma de Gramanet', 'Me robaron la chaqueta de ciclista a las cinco de la mañana por la plaza de Monterrey.', 'Specialized', 'S-Works Epic XTR Di2 29 ', 'Rojo', '-', 'Bicicleta de la marca Specialized, color rojo y talla M.', '2018 90318-00', 'sworksepicxtr', '30.00', 'M'),
+(22, 'Bergamont Contrail LTD 29\"', '2017-10-21', '2017-10-20', 'Badalona', 'Me robaron la bici a las diez de la mañana mientras iba por el Parc de Can Solei i Cal Arnús.', 'Bergamont', 'Contrail LTD 29\"', 'Verde', '-', 'Bici verde de la marca Bergamont con ruedas de 29\".', '4250563374186', 'contrailltd29', '50.00', 'L'),
+(23, 'Revox Edition Blue Bergamont', '2016-12-02', '2016-12-01', 'Badalona', 'Me robaron por el Parc de la Bòbila a medianoche con una navaja.', 'Bergamont', 'Revox Edition Blue', 'Azul', '-', 'Bici azul de la marca Bergamont con ruedas de 29\".', '2017 - 2519570', 'revoxblue', '40.00', 'L'),
+(24, 'Conor WRC Trace XT 29\"', '2016-11-04', '2016-11-02', 'El Prat de Llobregat', 'Me robaron la bici mientras esperaba a un amigo en la parada de la L9 de Parc Nou por las once de la mañana.', 'Conor', 'WRC Trace XT', 'Negro', '-', 'Bici de la marca Conor de color negro y con detalles azules. Tiene ruedas 29\".', '2016 - 610410AZ', 'wrctracext', '99.99', 'L'),
+(25, 'Haibike Xduro Nduro 10.0', '2017-09-22', '2017-09-21', 'El Prat de Llobregat', 'Mientras estaba en el Parc Lúdic fluvial del Prat de Llobregat, me robaron la bici por las seis de la tarde.', 'Haibike', 'Xduro Nduro 10.0', ' Gris', '-', 'Bicicleta gris con detalles rojos, blancos y amarillos de la marca Haibike. Tiene ruedas de 27,5\".', '2018-454037084', 'xduronduro', '99.00', 'S'),
+(26, 'E-Trailster 8.0 Bergamont', '2017-09-28', '2017-09-27', 'Girona', 'Me robaron la bici mientras iba con unos amigos un grupo de adolescentes con unas navajas. Ocurrió en el Parc de la Devesa a las 11 de la noche.', 'Bergamont', 'E-Trailster 8.0', 'Negro', '-', 'Bicicleta de la marca Bergamont de color negro con detalles naranjas.', '2017 - 2520240', 'etrailster', '50.00', 'M'),
+(27, 'Crave 29 Specialized', '2017-08-30', '2017-08-25', 'Girona', 'Me robaron la bici cerca del Carrer de Sant Dionís, frente al Museu de l\'aigua por las doce de la noche.', 'Specialized', 'Crave', 'Blanco', '-', 'Bici blanca con detalles rojos y negros. Es de la marca Specialized, del modelo Crave y tiene ruedas de 29\".', '91716-7004', 'cravespecialized', '80.00', 'L'),
+(28, 'Orbea Carpe 20', '2017-10-10', '2017-10-07', 'Hospitalet de Llobregat', 'Me robaron la bici mientras me dirigía a mi casa por los bloques de la Florida de la L1 a la una de la mañana.', 'Orbea', 'Carpe 20', 'Blanco', '-', 'Bici de la marca Orbea, modelo Carpe 20, de color blanco. Es una bici ligera y urbana.', '2017 - G425', 'orbeacarpe20', '30.00', 'XL'),
+(29, 'Giant Defy 2', '2016-07-20', '2016-07-18', 'Igualada', 'Me robaron la bici a las dos de la mañana por la Plaça de la Sardana, la dejé estacionada y cuando volví ya no estaba.', 'Giant', 'Defy 2', 'Azul', '-', 'Bici de la marca Giant, modelo Defy 2 cuadro de aluminio ALUXX SL', '2016 - 600011', 'gyantdefy2', '30.00', 'L'),
+(30, 'Orbea Alma M15 29', '2017-04-23', '2017-04-20', 'Sta. Coloma de Gramanet', 'Me robaron la bici en el Parc de la Trinitat. Cuando me quise dar cuenta ya no estaba donde la dejé estacionada hace un momento por las siete de la tarde. ', 'Orbea', 'Alma M15 29', 'Verde', '-', 'Bicicleta de la marca Orbea, modelo Alma M15 29 con cuadro de aluminio hydroformed triple butted y grupo Shimano.', '2018 - I233', 'almam15', '40.00', 'S');
 
 --
 -- Índices para tablas volcadas
@@ -91,7 +100,7 @@ ALTER TABLE `anunci`
 -- AUTO_INCREMENT de la tabla `anunci`
 --
 ALTER TABLE `anunci`
-  MODIFY `anu_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `anu_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
