@@ -132,15 +132,17 @@
 					$and=false;
 					$and1=false;
 					$and2=false;
+					$and3=false;
 
 					$string="";
 					$string1="";
 					$string2="";
 					$string3="";
+					$string4="";
 
 					/*Si el usuario no envía ningún filtro (es decir, sólo le da al botón de enviar), será prácticamente como volver a la página inicial: porque no hay ningún filtro seleccionado y se muestran los anuncios de más nuevos a más antiguos*/
 
-					if (!isset($anuncio)) {
+					if (($anuncio=="")&&($marca=="Cualquiera")&&($localidad=="Cualquiera")&&($color=="Cualquiera")) {
 						header("Location:formulario.php");
 					}else{
 						//////////// A PARTIR DE AQUÍ HACEMOS LA CONEXIÓN ////////////
@@ -157,28 +159,36 @@
 							//////////// A PARTIR DE AQUÍ COMBINAMOS LAS POSIBILIDADES ////////////
 
 							//Comprobamos que se haya elegido un color y no se haya elegido la opción de cualquiera
-							if($color!=="Cualquiera"){
-								$string="WHERE anu_color='$color'";
+							if ($anuncio!=="") {
+								$string="WHERE anu_titol LIKE '%$anuncio%'";
 								$and=true;
 							}
 
-							//Comprobamos lo mismo con marca
-							if($marca!=="Cualquiera"){
-								$string1="WHERE anu_marca='$marca'";
-								//Si se ha elegido una consulta anterior se enlaza con un AND
+							if($color!=="Cualquiera"){
+								$string1="WHERE anu_color='$color'";
 								if ($and==true) {
-									$string1="AND anu_marca='$marca'";
+									$string1="AND anu_color='$color'";
 								}		
 								$and1=true;
 							}
 
-							//Se repite el proceso
-							if ($localidad!=="Cualquiera") {
-								$string2="WHERE anu_ubicacio_robatori='$localidad'";
+							//Comprobamos lo mismo con marca
+							if($marca!=="Cualquiera"){
+								$string2="WHERE anu_marca='$marca'";
+								//Si se ha elegido una consulta anterior se enlaza con un AND
 								if (($and==true)||($and1==true)) {
-									$string2="AND anu_ubicacio_robatori='$localidad'";
+									$string2="AND anu_marca='$marca'";
 								}
 								$and2=true;
+							}
+
+							//Se repite el proceso
+							if ($localidad!=="Cualquiera") {
+								$string3="WHERE anu_ubicacio_robatori='$localidad'";
+								if (($and==true)||($and1==true)||($and2==true)) {
+									$string3="AND anu_ubicacio_robatori='$localidad'";
+								}
+								$and3=true;
 							}
 
 							/*En el caso de los checkboxs guardamos las variables en un array (al que hemos guardado en la variable tal para usarlo con más facilidad)*/
@@ -192,39 +202,39 @@
 									//Ya que sólo son 4 tallas, contamos los valores de la array
 									if (count($tal)==1) {
 									//En el caso en que sea una lo dejamos con un WHERE y la talla (dando por hecho que no han buscado otra cosa como marca, ciudad, etc).
-										$string3="WHERE anu_talla='$t'";
+										$string4="WHERE anu_talla='$t'";
 										//En el caso en el que ya se hayan hecho otras busquedas lo añadimos con un AND
-										if (($and==true)||($and1==true)||($and2==true)) {
-											$string3="AND anu_talla='$t'";
+										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+											$string4="AND anu_talla='$t'";
 										}
 									}
 									//En el caso en que sean más de un valor se ha enlazar con un or según la posición
 									if (count($tal)==2) {
 										//Por eso si sabemos que los valores del array son solo dos los cogemos por la posición
-										$string3="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
+										$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
 										//De nuevo: si ya han elegido otros filtros, se añade con un and, adelantandonos con las posiciones.
-										if (($and==true)||($and1==true)||($and2==true)) {
-											$string3="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
+										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+											$string4="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
 										}
 									}
 									//A partir de aquí es el mismo proceso una y otra vez
 									if (count($tal)==3) {
-										$string3="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
-										if (($and==true)||($and1==true)||($and2==true)) {
-											$string3="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
+										$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
+										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+											$string4="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
 										}
 									}
 
 									if (count($tal)==4) {
-										$string3="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]'";
-										if (($and==true)||($and1==true)||($and2==true)) {
-											$string3="AND anu_talla='$tal[0]' OR (anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]')";
+										$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]'";
+										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+											$string4="AND anu_talla='$tal[0]' OR (anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]')";
 										}
 									}
 								}//fin del foreach
 							}
 
-							$j="SELECT * FROM anunci $string $string1 $string2 $string3";
+							$j="SELECT * FROM anunci $string $string1 $string2 $string3 $string4";
 
 							//Creamos la variable consulta, que contiene la conexion a la bdd y el qué va a buscar
 							$consulta = mysqli_query($conexion, $j);
