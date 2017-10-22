@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2017 a las 13:01:27
+-- Tiempo de generación: 22-10-2017 a las 14:47:18
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -79,7 +79,7 @@ INSERT INTO `anunci` (`anu_id`, `anu_titol`, `anu_data_anunci`, `anu_data_robato
 (26, 'E-Trailster 8.0 Bergamont', '2017-09-28', '2017-09-27', 'Girona', 'Me robaron la bici mientras iba con unos amigos un grupo de adolescentes con unas navajas. Ocurrió en el Parc de la Devesa a las 11 de la noche.', 'Bergamont', 'E-Trailster 8.0', 'Negro', '-', 'Bicicleta de la marca Bergamont de color negro con detalles naranjas.', '2017 - 2520240', 'etrailster', '50.00', 'M'),
 (27, 'Crave 29 Specialized', '2017-08-30', '2017-08-25', 'Girona', 'Me robaron la bici cerca del Carrer de Sant Dionís, frente al Museu de l\'aigua por las doce de la noche.', 'Specialized', 'Crave', 'Blanco', '-', 'Bici blanca con detalles rojos y negros. Es de la marca Specialized, del modelo Crave y tiene ruedas de 29\".', '91716-7004', 'cravespecialized', '80.00', 'L'),
 (28, 'Orbea Carpe 20', '2017-10-10', '2017-10-07', 'Hospitalet de Llobregat', 'Me robaron la bici mientras me dirigía a mi casa por los bloques de la Florida de la L1 a la una de la mañana.', 'Orbea', 'Carpe 20', 'Blanco', '-', 'Bici de la marca Orbea, modelo Carpe 20, de color blanco. Es una bici ligera y urbana.', '2017 - G425', 'orbeacarpe20', '30.00', 'XL'),
-(29, 'Giant Defy 2', '2016-07-20', '2016-07-18', 'Igualada', 'Me robaron la bici a las dos de la mañana por la Plaça de la Sardana, la dejé estacionada y cuando volví ya no estaba.', 'Giant', 'Defy 2', 'Azul', '-', 'Bici de la marca Giant, modelo Defy 2 cuadro de aluminio ALUXX SL', '2016 - 600011', 'gyantdefy2', '30.00', 'L'),
+(29, 'Giant Defy 2', '2016-07-20', '2016-07-18', 'Igualada', 'Me robaron la bici a las dos de la mañana por la Plaça de la Sardana, la dejé estacionada y cuando volví ya no estaba.', 'Giant', 'Defy 2', 'Azul', '-', 'Bici de la marca Giant, modelo Defy 2 cuadro de aluminio ALUXX SL', '2016 - 600011', 'giantdefy2', '30.00', 'L'),
 (30, 'Orbea Alma M15 29', '2017-04-23', '2017-04-20', 'Sta. Coloma de Gramanet', 'Me robaron la bici en el Parc de la Trinitat. Cuando me quise dar cuenta ya no estaba donde la dejé estacionada hace un momento por las siete de la tarde. ', 'Orbea', 'Alma M15 29', 'Verde', '-', 'Bicicleta de la marca Orbea, modelo Alma M15 29 con cuadro de aluminio hydroformed triple butted y grupo Shimano.', '2018 - I233', 'almam15', '40.00', 'S');
 
 --
