@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Inicio</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 	<link rel="stylesheet" type="text/css" href="css/HojaEstilos.css">
 	<meta charset="utf-8">
 
@@ -47,12 +48,11 @@
 				// Con un if mostramos toda la consulta hasta que llegue a 0 consultas
 
 				//Creamos la consulta anu_color de la tabla anunci, le ponemos un distinct para no repetir la consulta dada y que lo ordene 
-				echo"<br>";
 				$q = "Select distinct(anu_color) from anunci ORDER BY anu_color";
 				$resultados = mysqli_query($conexion, $q);
 				if(mysqli_num_rows($resultados)>0){
 					//Ponemos un select para hacer un despegable y un option para que en el principio muetre Cualquiera
-					echo "<br>Colores:<br><br/>";
+					echo "<br><b>Colores</b>";
 					echo "<select name='colores'>";
 					echo "<option>Cualquiera</option>";
 					while($colores= mysqli_fetch_array($resultados)){
@@ -64,9 +64,9 @@
 				} else {
 					echo "No hay colores que mostrar";
 				}
-				echo "<p>";
+				
 
-				echo "Marcas<br></br>";
+				echo "<br></br><b>Marcas</b>";
 
   				//Creamos la consulta anu_marca de la tabla anunci, le ponemos un distinct para no repetir la consulta dada y que lo ordene 
 				$q = "select distinct(anu_marca) from anunci ORDER BY anu_marca";				
@@ -85,7 +85,7 @@
 
 				}
 
-				echo "<br></br>Localidades<br></br>";
+				echo "<br></br><b>Localidades</b>";
 				//Creamos la consulta anu_marca de la tabla anunci, le ponemos un distinct para no repetir la consulta dada y que lo ordene 
 				$q = "select distinct(anu_ubicacio_robatori) from anunci ORDER BY anu_ubicacio_robatori";
 				$resultados = mysqli_query($conexion, $q);
@@ -102,12 +102,12 @@
 					echo "No hay categorías que mostrar";
 				}
 				echo "<p>";
-
+				//Hacer una consulta que ordene las tallas de la S,M,L,XL
 				$q ="SELECT DISTINCT(anu_talla) FROM `anunci` ORDER BY CASE `anu_talla` WHEN 'S' THEN 1 WHEN 'M' THEN 2 WHEN 'L' THEN 3 WHEN 'XL' THEN 4 END";
 				$resultados = mysqli_query($conexion,$q);
 
 				if(mysqli_num_rows($resultados)>0){
-					echo "Tallas<br></br>";
+					echo "<b>Tallas</b><br></br>";
 					//Con un mientras se mete en la variable $categoria el array las consultas guardadas en la variable $resultados
 					//Mostramos las columnas de la base de datos y lo ponemos en un checkbox 
 					while ($talla= mysqli_fetch_array($resultados)) {
@@ -157,32 +157,37 @@
 						exit;
 					} else {
 					//informamos a la BD que toda consulta que realicemos, la queremos con los contenidos pasados a utf8
-						$acentos=mysqli_query($conexion, "SET NAMES 'utf8'");
+						mysqli_query($conexion, "SET NAMES 'utf8'");
 					// Guardamos en la variable $q la consulta que muestre todo de la tabla anunci y lo ordene
 						if (isset($_REQUEST['producto'])){
-
-							$producto = $_REQUEST['producto'];
-							$q = "SELECT * FROM anunci WHERE anu_titol like '%$producto%'";
-
-
+							if($_REQUEST['producto'] != ""){
+								$producto = $_REQUEST['producto'];
+								$query = "SELECT * FROM anunci WHERE anu_titol like '%".$producto ."%'";	
+								$resultados = mysqli_query($conexion, $query);	
+								$numero = mysqli_num_rows($resultados);
+							}else{
+								echo "No hay nada que mostrar: 0";
+							}
 						}else{
 
-							$q = "SELECT * FROM anunci order by anu_data_anunci DESC";
-
+							$query = "SELECT * FROM anunci order by anu_data_anunci DESC";
+							$resultados = mysqli_query($conexion, $query);
+							$numero = mysqli_num_rows($resultados);
 						}
-						
-						$resultados = mysqli_query($conexion, $q);
-						if(mysqli_num_rows($resultados)>0){
+						//$resultados = mysqli_query($conexion, $query);
+						//$numero = mysqli_num_rows($resultados);
+						//echo "$numero";
+						if(mysqli_num_rows($resultados)>0 or $_REQUEST['producto'] == ""){
 							//$anunci = mysqli_fetch_array($resultados);
 						// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
 							while($anunci = mysqli_fetch_array($resultados)){
-								echo "<div style='width: 600px; height: 340px; float: left; color: #666; background-color: white; margin-right: 10px; margin-bottom: 10px; border: 1px solid #e8e8e8;'>";
+								echo "<div style='width: 295px; height: 340px; float: left; color: #666; background-color: white; margin-right: 10px; margin-bottom: 10px; border: 1px solid #e8e8e8;'>";
 								echo "<div class='fuenteProducto'>";
-								echo "$anunci[anu_titol]";
+								echo "<b>$anunci[anu_titol]</b>";
 								echo "</div>";
 								echo "<div>";
 								echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
-								echo "<div class='caracteristicasProducto'>";
+								echo "<div class='caracteristicasProductoPrincipal'>";
 								echo "Compensación: $anunci[anu_compensacio]<br>";
 								echo "</div>";
 								echo "</div>";
