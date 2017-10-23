@@ -1,3 +1,17 @@
+body{
+	padding3%
+}
+
+.divcentrar{
+	text-align: center;
+	margin-left: 8%;
+}
+
+.registro{
+	border: 1px solid #e8e8e8;
+	background-color:white;
+	padding:5px;
+}
 
 .div{
 
@@ -10,10 +24,11 @@
 .div2{
 
 	font-family: 'Open Sans';
-	color: #666;
-	width: 200px;
+	color: white;
+	background-color:black;
+	width: 15%;
 	border: 1px solid #e8e8e8;
-	padding: 20px 10px 18px 20px;
+	padding:1%;
 	top:116px;
 	left:8px; 
 	position: absolute; 
@@ -21,6 +36,23 @@
 	margin: 60px 10px;
 	
 }
+
+.divderecha{
+	font-family: 'Open Sans';
+	color: white;
+	right:8px;
+	background-color:black;
+	height: 310px;
+	width: 16%;
+	border: 1px solid #e8e8e8;
+	padding:1%;
+	top:54px;
+	position: absolute;
+	visibility: visible;
+	margin-left: 20px;
+}
+
+
 
 .div3{
 	color:#302A29;
@@ -31,7 +63,7 @@
 }
 .div4{
 	background-color:white;
-	width: 1200px;
+	width: 90%;
 	height: 40px;
 	text-align:left; 
 	float: left;
@@ -42,7 +74,7 @@
 .div5{
 	background-color: white;
 	height:60%; 
-	width:82%; 
+	width:80%; 
 	left:260px; 
 	top: 116px; 
 	position: absolute; 
@@ -50,11 +82,10 @@
 	z-index:10;
 	text-align: center;
 
-
 }
 
 .color{
-	width: 203px;
+	width: 15%;
 	background-color: #df0005;
 	color:white;
 	font-size: 14px;
@@ -62,38 +93,61 @@
 	float: left;
 	text-align: left;
 	margin: 8px 20px 9px 10px;
-	padding: 15px;
-
-
-
+	padding: 1.15%;
 }
 
-div.caracteristicasProductoPrincipal{
-	float: right;
-	padding :0px 20px 20px 0px;
+.color1{
+	width: 16%;
+	background-color: #df0005;
+	color:white;
+	font-size: 14px;
+	font-family: 'Open Sans';
+	float: left;
+	text-align: right;
+	padding: 1.15%;
+	position: absolute;
+	visibility: visible;
+	right:8px;
+}
+
+.color2{
+	width: 16%;
+	background-color: #df0005;
+	color:white;
+	font-size: 14px;
+	font-family: 'Open Sans';
+	float: left;
+	text-align: right;
+	top:5px;
+	padding: 1.15%;
+	position: absolute;
+	visibility: visible;
+	right:8px;
+}
+
+p.caracteristicasProductoPrincipal{
 	color:#666;
 	text-align: center;
-	width: 280px;
 	font-family: 'Open Sans';
 	font-size: 14px;
-
+	padding-bottom:3px;
 }
+
 
 div.caracteristicasProductoDetalle{
 	float: right;
 	padding :0px 20px 20px 0px;
 	color:#666;
 	text-align: left;
-	width: 280px;
+	width: 100%;
 	font-family: 'Open Sans';
 	font-size: 14px;
 
 }
 
 #imagenProducto {
-	height:260px;
-	width:260px;
-	padding:0px 0px 0px 0px;
+	height:80%;
+	width:80%;
 
 
 
@@ -125,7 +179,7 @@ select {
 
 }
 input[type=text2] {
-    width: 600px;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
