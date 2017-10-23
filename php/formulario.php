@@ -295,14 +295,28 @@
 								//echo "$total";
 								//Mostramos los detalles del anuncio
 
+								echo"<div class='color2'>";
+								echo"REGISTRO";
+								echo"</div>";
+
+								echo"<div class='divderecha'>";
+									echo"<br><b>¿También le han robado la bici?</b><br><br>";
+									echo"<button class='registro'>Registrarse</button><br>";
+									echo"<br><br>";
+									echo"<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>";
+									echo"<button class='registro'>Iniciar sesión</button>";
+								echo"</div>";
+
 								while($anunci=mysqli_fetch_array($consulta)){
-									echo "<div style='width: 27%; height: 370px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
+									echo "<div class='divcentrar'>";
+									echo "<div style='width: 31.5%; height: 420px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
 									echo "<div class='fuenteProducto'>";
 									echo "<b>$anunci[anu_titol]</b>";
 									echo "</div>";
 									echo "<div>";
 									echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
 									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
+									echo "</div>";
 									echo "</div>";
 									echo "</div>";
 									/*echo "<div class='caracteristicasProductoDetalle'>";*/
@@ -337,22 +351,22 @@
 							
 							if(mysqli_num_rows($resultados)>0 or $_REQUEST['producto'] == ""){
 							//$anunci = mysqli_fetch_array($resultados);
-								?>
+								
 							
 							
-								<div class="color1">
-								REGISTRO
-								</div>
+								echo"<div class='color2'>";
+								echo"REGISTRO";
+								echo"</div>";
 
-								<div class="divderecha" >
-									<br><b>¿También le han robado la bici?</b><br><br>
-									<button class="registro">Registrarse</button><br>
-									<br><br>
-									<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>
-									<button class="registro">Iniciar sesión</button>
-								</div>
+								echo"<div class='divderecha'>";
+									echo"<br><b>¿También le han robado la bici?</b><br><br>";
+									echo"<button class='registro'>Registrarse</button><br>";
+									echo"<br><br>";
+									echo"<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>";
+									echo"<button class='registro'>Iniciar sesión</button>";
+								echo"</div>";
 
-							<?php
+							
 							// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
 								while($anunci = mysqli_fetch_array($resultados)){
 								echo "<div class='divcentrar'>";
@@ -368,19 +382,8 @@
 								echo "</div>";
 								}
 							} else {
-								?>
-								<div class="color1">
-								REGISTRO
-								</div>
-
-								<div class="divderecha" >
-									<br><b>¿También le han robado la bici?</b><br><br>
-									<button class="registro">Registrarse</button><br>
-									<br><br>
-									<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>
-									<button class="registro">Iniciar sesión</button>
-								</div>
-								<?php
+							
+								
 								echo "No hay nada que mostrar: 0";
 							}							
 							
