@@ -12,8 +12,8 @@
 	<form action="formulario.php" method="REQUEST">
 		<div class="div4">
 			<span>
-				<img src="img/logo.png" style="vertical-align: middle; margin: 7px 98px 2px 59px;" >
-				<input type="text2" name="producto" size="40"">
+				<img src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" >
+				<input placeholder="Escriba aquí el anuncio que quiera buscar" type="text2" name="producto" size="40"">
 				<button type="submit" style="padding: 0px; border-width: 0px; background-color: white; ">
 					<img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px">
 				</button>
@@ -296,28 +296,16 @@
 								//Mostramos los detalles del anuncio
 
 								while($anunci=mysqli_fetch_array($consulta)){
-									echo "<div style='width: 600px; height: 380px; float: left; color: #666; background-color: white; margin-right: 10px; margin-bottom: 10px; border: 1px solid #e8e8e8;'>";
+									echo "<div style='width: 27%; height: 370px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
 									echo "<div class='fuenteProducto'>";
 									echo "<b>$anunci[anu_titol]</b>";
 									echo "</div>";
 									echo "<div>";
 									echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
-									echo "<div class='caracteristicasProductoDetalle'>";
-									echo "Ref: $anunci[anu_numero_serie]<br/>";
-									echo "Fecha del anuncio: $anunci[anu_data_anunci]<br/>";
-									echo "Fecha del robatorio: $anunci[anu_data_robatori]<br/>";
-									echo "Ubicación del robatorio: $anunci[anu_ubicacio_robatori]<br/>";
-									echo "Descripción del robatorio: $anunci[anu_descripcio_robatori]<br/>";
-									echo "Marca: $anunci[anu_marca]<br/>";
-									echo "Modelo: $anunci[anu_model]<br/>";
-									echo "Color: $anunci[anu_color]<br/>";
-									echo "Antiguedad: $anunci[anu_antiguitat]<br/>";
-									echo "Descripción: $anunci[anu_descripcio]<br/>";
-									echo "Talla: $anunci[anu_talla]<br/>";
-									echo "Compensación: $anunci[anu_compensacio]€<br/>";
+									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
 									echo "</div>";
 									echo "</div>";
-									echo "</div>";
+									/*echo "<div class='caracteristicasProductoDetalle'>";*/
 									$ok=true;
 								}//fin del while
 							}//fin del else/if de filas
@@ -346,25 +334,56 @@
 							//$resultados = mysqli_query($conexion, $query);
 							//$numero = mysqli_num_rows($resultados);
 							//echo "$numero";
+							
 							if(mysqli_num_rows($resultados)>0 or $_REQUEST['producto'] == ""){
 							//$anunci = mysqli_fetch_array($resultados);
+								?>
+							
+							
+								<div class="color1">
+								REGISTRO
+								</div>
+
+								<div class="divderecha" >
+									<br><b>¿También le han robado la bici?</b><br><br>
+									<button class="registro">Registrarse</button><br>
+									<br><br>
+									<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>
+									<button class="registro">Iniciar sesión</button>
+								</div>
+
+							<?php
 							// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
 								while($anunci = mysqli_fetch_array($resultados)){
-								echo "<div style='width: 295px; height: 340px; float: left; color: #666; background-color: white; margin-right: 10px; margin-bottom: 10px; border: 1px solid #e8e8e8;'>";
+								echo "<div class='divcentrar'>";
+								echo "<div style='width: 31.5%; height: 420px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
 								echo "<div class='fuenteProducto'>";
 								echo "<b>$anunci[anu_titol]</b>";
 								echo "</div>";
 								echo "<div>";
 								echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
-								echo "<div class='caracteristicasProductoPrincipal'>";
-								echo "Compensación: $anunci[anu_compensacio]<br>";
+								echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
 								echo "</div>";
 								echo "</div>";
 								echo "</div>";
 								}
 							} else {
+								?>
+								<div class="color1">
+								REGISTRO
+								</div>
+
+								<div class="divderecha" >
+									<br><b>¿También le han robado la bici?</b><br><br>
+									<button class="registro">Registrarse</button><br>
+									<br><br>
+									<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>
+									<button class="registro">Iniciar sesión</button>
+								</div>
+								<?php
 								echo "No hay nada que mostrar: 0";
-							}
+							}							
+							
 						}//Fin del else de la conexion
 						}
 					?>
