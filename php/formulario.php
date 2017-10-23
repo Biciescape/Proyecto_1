@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<!--Pasamos el formulario en la página formulario1.php !-->
+	<!--Pasamos el formulario en la página formulario.php !-->
 	<form action="formulario.php" method="REQUEST">
 		<div class="div4">
 			<span>
@@ -35,7 +35,7 @@
 				exit;
 			} else {
 				//informamos a la BD que toda consulta que realicemos, la queremos con los contenidos pasados a utf8
-				$acentos=mysqli_query($conexion, "SET NAMES 'utf8'");
+				mysqli_query($conexion, "SET NAMES 'utf8'");
 
 				//Guardar en la variable $q la consulta
 
@@ -148,6 +148,7 @@
 
 
 					$conexion=mysqli_connect("localhost", "root", "", "bd_biciescapa");
+					mysqli_set_charset($conexion, "utf8");
 					if(!$conexion){
 						echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
 						echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
@@ -288,11 +289,12 @@
 							//Si no encuentra ninguno da el mensaje de que no se ha encontrado nada
 							if ($total==0) {
 								echo "Lo sentimos, no hemos podido encontrar el anuncio que buscaba :(";
-								$ok=false;
+								$ok=true;
 							}else{
 								//También la podemos usar (la variable $total) para poder ordenar cuantos anuncios se muestran en un futuro
 								//echo "$total";
 								//Mostramos los detalles del anuncio
+
 								while($anunci=mysqli_fetch_array($consulta)){
 									echo "<div style='width: 600px; height: 380px; float: left; color: #666; background-color: white; margin-right: 10px; margin-bottom: 10px; border: 1px solid #e8e8e8;'>";
 									echo "<div class='fuenteProducto'>";
