@@ -2,18 +2,18 @@
 .div{
 
 	background-color:blue; 
-	width: 100px;
+	width: 100%;
 	float: left;
 
 }
 
 .div2{
 
-	font-family: "Serif";
-	color:black;
+	font-family: 'Open Sans';
+	color: #666;
 	width: 200px;
 	border: 1px solid #e8e8e8;
-	padding:  20px 10px 18px 20px;
+	padding: 20px 10px 18px 20px;
 	top:116px;
 	left:8px; 
 	position: absolute; 
@@ -31,7 +31,7 @@
 }
 .div4{
 	background-color:white;
-	width: 1400px;
+	width: 1200px;
 	height: 40px;
 	text-align:left; 
 	float: left;
@@ -41,9 +41,9 @@
 }
 .div5{
 	background-color: white;
-	height: 650px; 
-	width: 1250px; 
-	left:261px; 
+	height:60%; 
+	width:82%; 
+	left:260px; 
 	top: 116px; 
 	position: absolute; 
 	visibility: visible;
@@ -54,26 +54,40 @@
 }
 
 .color{
-	width: 206px;
+	width: 203px;
 	background-color: #df0005;
 	color:white;
 	font-size: 14px;
-	font-family: Open Sans;
+	font-family: 'Open Sans';
 	float: left;
 	text-align: left;
-	margin: 10px 20px 8px 6px;
+	margin: 8px 20px 9px 10px;
 	padding: 15px;
 
 
 
 }
 
-div.caracteristicasProducto{
+div.caracteristicasProductoPrincipal{
+	float: right;
+	padding :0px 20px 20px 0px;
+	color:#666;
+	text-align: center;
+	width: 280px;
+	font-family: 'Open Sans';
+	font-size: 14px;
+
+}
+
+div.caracteristicasProductoDetalle{
 	float: right;
 	padding :0px 20px 20px 0px;
 	color:#666;
 	text-align: left;
 	width: 280px;
+	font-family: 'Open Sans';
+	font-size: 14px;
+
 }
 
 #imagenProducto {
@@ -86,14 +100,16 @@ div.caracteristicasProducto{
 }
 .fuenteProducto{
 	text-align: center;
-	font-size: 20px; 
+	font-size: 15px; 
 	font-style: bold;
 	padding: 7px;
+	font-family: Open Sans;
+	color: #666;
 }
 
 .logo{
 	text-align: left;
-	width: 100px;
+	width: 80%;
 	
 
 
@@ -101,11 +117,12 @@ div.caracteristicasProducto{
 
 select {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+
 }
 input[type=text2] {
     width: 600px;
