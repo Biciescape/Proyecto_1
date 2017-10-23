@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Inicio</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 	<link rel="stylesheet" type="text/css" href="css/HojaEstilos.css">
 	<meta charset="utf-8">
 
@@ -9,15 +10,14 @@
 <body>
 	
 	<!--Pasamos el formulario en la página formulario1.php !-->
-	<form action="formulario1.php" method="REQUEST">
+	<form action="formulario.php" method="REQUEST">
 		<div class="div4">
 			<span>
 				<img src="img/logo.png" style="vertical-align: middle; margin: 7px 98px 2px 59px;" ></img>
-				<input type="text2" name="producto" size="40"">
+				<input type="text2" name="producto" size="40">
 				<img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px"></img></button>
 			</span>
 		</div>
-
 	</form>
 	<form action="formulario1.php" method="REQUEST">
 		<div class="color">
@@ -43,12 +43,12 @@
 				// Con un if mostramos toda la consulta hasta que llegue a 0 consultas
 
 				//Creamos la consulta anu_color de la tabla anunci, le ponemos un distinct para no repetir la consulta dada y que lo ordene 
-				echo"<br>";
+			
 				$q = "Select distinct(anu_color) from anunci ORDER BY anu_color";
 				$resultados = mysqli_query($conexion, $q);
 				if(mysqli_num_rows($resultados)>0){
 				//Ponemos un select para hacer un despegable y un option para que en el principio muetre Cualquiera
-					echo "<br>Colores:<br><br/>";
+					echo "<br><b>Colores</b></br>";
 					echo "<select name='colores'>";
 					echo "<option>Cualquiera</option>";
 					while($colores= mysqli_fetch_array($resultados)){
@@ -60,9 +60,10 @@
 				} else {
 					echo "No hay colores que mostrar";
 				}
-				echo "<p>";
+				
 
-				echo "Marcas<br></br>";
+
+				echo "<br></br><b>Marcas</b>";
 
   				//Creamos la consulta anu_marca de la tabla anunci, le ponemos un distinct para no repetir la consulta dada y que lo ordene 
 				$q = "select distinct(anu_marca) from anunci ORDER BY anu_marca";				
@@ -81,7 +82,7 @@
 
 				}
 
-				echo "<br></br>Localidades<br></br>";
+				echo "<br></br><b>Localidades</b>";
 				//Creamos la consulta anu_marca de la tabla anunci, le ponemos un distinct para no repetir la consulta dada y que lo ordene 
 				$q = "select distinct(anu_ubicacio_robatori) from anunci ORDER BY anu_ubicacio_robatori";
 				$resultados = mysqli_query($conexion, $q);
@@ -103,7 +104,7 @@
 				$resultados = mysqli_query($conexion,$q);
 
 				if(mysqli_num_rows($resultados)>0){
-					echo "Tallas<br></br>";
+					echo "<b>Tallas</b><br></br>";
 					//Con un mientras se mete en la variable $categoria el array las consultas guardadas en la variable $resultados
 					//Mostramos las columnas de la base de datos y lo ponemos en un checkbox 
 					while ($talla= mysqli_fetch_array($resultados)) {
@@ -265,11 +266,11 @@
 								while($anunci=mysqli_fetch_array($consulta)){
 									echo "<div style='width: 600px; height: 380px; float: left; color: #666; background-color: white; margin-right: 10px; margin-bottom: 10px; border: 1px solid #e8e8e8;'>";
 									echo "<div class='fuenteProducto'>";
-									echo "$anunci[anu_titol]";
+									echo "<b>$anunci[anu_titol]</b>";
 									echo "</div>";
 									echo "<div>";
 									echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
-									echo "<div class='caracteristicasProducto'>";
+									echo "<div class='caracteristicasProductoDetalle'>";
 									echo "Ref: $anunci[anu_numero_serie]<br/>";
 									echo "Fecha del anuncio: $anunci[anu_data_anunci]<br/>";
 									echo "Fecha del robatorio: $anunci[anu_data_robatori]<br/>";
