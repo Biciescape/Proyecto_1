@@ -9,7 +9,7 @@
 <body>
 	
 	<!--Pasamos el formulario en la página formulario1.php !-->
-	<form action="formulario.php" method="REQUEST">
+	<form action="formulario1.php" method="REQUEST">
 
 		<div class="div4">
 			
@@ -111,7 +111,7 @@
 					//Con un mientras se mete en la variable $categoria el array las consultas guardadas en la variable $resultados
 					//Mostramos las columnas de la base de datos y lo ponemos en un checkbox 
 					while ($talla= mysqli_fetch_array($resultados)) {
-						echo "<input type='checkbox' name='talla' value='$talla[anu_talla]'>$talla[anu_talla]<br></br>";
+						echo "<input type='checkbox' name='talla[]' value='$talla[anu_talla]'>$talla[anu_talla]<br></br>";
 					}
 				//Si no encuentra la consulta saldrá el mensaje no hay categorias que mostrar
 				}else {
