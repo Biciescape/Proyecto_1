@@ -14,8 +14,13 @@
 		<div class="div4">
 			<span>
 				<img src="img/logo.png" style="vertical-align: middle; margin: 7px 98px 2px 59px;" ></img>
+<<<<<<< HEAD
 				<input type="text2" name="producto" size="40">
 				<img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px"></img></button>
+=======
+				<input type="text2" name="producto" size="40"">
+				<button type="submit" name="boton" style="padding: 0px; border-width: 0px; background-color: white; "><img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px"></img></button>
+>>>>>>> 50f96e92d595caf555a4b9baf1d1ccd3bb9ffa04
 			</span>
 		</div>
 	</form>
@@ -131,13 +136,30 @@
 					//Creamos las variables que el usuario puede introducir con los filtros.
 
 
-				if(isset($_REQUEST['marca']) && ($_REQUEST['ciudad']) && ($_REQUEST['colores'])){
+				if (isset($_REQUEST['marca'])) {
 					$marca=$_REQUEST['marca'];
+				}
+				if (isset($_REQUEST['ciudad'])) {
 					$localidad=$_REQUEST['ciudad'];
+				}
+				if (isset($_REQUEST['colores'])) {
 					$color=$_REQUEST['colores'];
-					$anuncio="";
-				}elseif (isset($_REQUEST['producto'])) {
+				}
+
+				if (isset($_REQUEST['producto'])) {
 					$anuncio=$_REQUEST['producto'];
+				}
+				if (!isset($_REQUEST['marca'])) {
+					$marca="Cualquiera";
+				}
+				if (!isset($_REQUEST['ciudad'])) {
+					$localidad="Cualquiera";
+				}
+				if (!isset($_REQUEST['colores'])) {
+					$color="Cualquiera";
+				}
+				if (!isset($_REQUEST['producto'])) {
+					$anuncio="";
 				}
 
 
@@ -208,7 +230,7 @@
 							$tal=$_REQUEST['talla'];
 						}
 
-						if (isset($tal)) {
+						if (isset($_REQUEST['talla'])) {
 								//Hacemos que guarde los valores (las tallas seleccionadas) en la variable $t
 							foreach ($tal as $t) {
 									//Ya que sólo son 4 tallas, contamos los valores de la array
@@ -247,7 +269,7 @@
 							}
 
 							$j="SELECT * FROM anunci $string $string1 $string2 $string3 $string4";
-
+							
 							//Creamos la variable consulta, que contiene la conexion a la bdd y el qué va a buscar
 							
 							$consulta = mysqli_query($conexion, $j);

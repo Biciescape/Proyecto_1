@@ -10,7 +10,7 @@
 <body>
 	
 	<!--Pasamos el formulario en la página formulario1.php !-->
-	<form action="formulario.php" method="REQUEST">
+	<form action="formulario1.php" method="REQUEST">
 
 		<div class="div4">
 			
