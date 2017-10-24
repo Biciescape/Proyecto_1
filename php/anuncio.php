@@ -3,10 +3,12 @@
 <head>
 	<title>Inicio</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
 	<link rel="stylesheet" type="text/css" href="css/HojaEstilos.css" media="screen and (min-width:1317px)">
 	<link rel="stylesheet" type="text/css" href="css/HojaEstilos_medio.css" media="screen and (min-width:1000px) and (max-width:1316px)">
 	<link rel="stylesheet" type="text/css" href="css/HojaEstilos_pequeño.css" media="screen and (min-width:691px) and (max-width:999px)">
 	<link rel="stylesheet" type="text/css" href="css/HojaEstilos_movil.css" media="screen  and (max-width:690px)">
+
 	<meta charset="utf-8">
 
 </head>

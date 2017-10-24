@@ -382,18 +382,18 @@
 								
 								while($anunci = mysqli_fetch_array($resultados)){
 								echo "<div class='divcentrar'>";
-								echo "<a href='anuncio.php?id=$anunci[anu_id]'>";
-								echo "<div class='estilo'>";
-								echo "<div class='fuenteProducto'>";
-								echo "<b>$anunci[anu_titol]</b>";
-								echo "</div>";
-								echo "<div>";
-								echo "<img id='imagenProducto' src='img/$anunci[anu_foto]'>";
-								echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
-								echo "</div>";
-								echo "</div>";
-								echo "</a>";
-								echo "</div>";
+									echo "<a href='anuncio.php?id=$anunci[anu_id]'>";
+									echo "<div class='estilo'>";
+									echo "<div class='fuenteProducto'>";
+									echo "<b>$anunci[anu_titol]</b>";
+									echo "</div>";
+									echo "<div>";
+									echo "<img id='imagenProducto' src='img/$anunci[anu_foto]'>";
+									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
+									echo "</div>";
+									echo "</div>";
+									echo"</a>";
+									echo "</div>";
 								}
 							} else {
 							
