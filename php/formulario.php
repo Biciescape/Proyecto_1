@@ -368,8 +368,20 @@
 
 							
 							// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
+								
+
+								/*echo "<div class='div3'>";
+									echo "<select>";
+										echo "<option value='Cualquiera'>Visualizar</option>";
+										echo "<option value='mostrar_5'>5</option>";
+										echo "<option value='mostrar_10'>10</option>";
+										echo "<option value='mostrar_15'>15</option>";
+									echo "</select>";
+								echo "</div>"; */
+								
 								while($anunci = mysqli_fetch_array($resultados)){
 								echo "<div class='divcentrar'>";
+								echo "<a href='anuncio.php?id=$anunci[anu_id]'>";
 								echo "<div style='width: 31.5%; height: 420px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
 								echo "<div class='fuenteProducto'>";
 								echo "<b>$anunci[anu_titol]</b>";
@@ -379,6 +391,7 @@
 								echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
 								echo "</div>";
 								echo "</div>";
+								echo "</a>";
 								echo "</div>";
 								}
 							} else {
