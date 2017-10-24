@@ -130,19 +130,19 @@ $fecha = date("d M Y, H:i");
 	<form action="addanun.php" class=registro name="addnew" method="POST" onsubmit="return validar();" enctype="multipart/form-data">
 
 		<?php echo "<p class='titulop'>CREA UNA CUENTA</p>"; ?>
-	Titulo:</br><input type="text3" name="anu_titol" size="36"></br>
-	Fecha Anuncio:</br><input type="date" name="anu_data_anunci"  onkeypress="return false"></br>
-	Fecha Robo:</br><input type="date" name="anu_data_robatori" placeholder="dd/mm/yyyy"></br>
-	Ubicacion Robo:</br> <input type="text3" name="anu_ubicacio_robatori" size="40"></br>
-	Descripcion Robo:</br><input type="text3" name="anu_descripcio_robatori"></br>
-	Marca:</br> <input type="text3" name="anu_marca" size="40"></br>
-	Modelo:</br> <input type="text3" name="anu_model" size="40"></br>
-	Color:</br> <input type="text3" name="anu_color" size="40"></br>
-	Antiguedad:</br> <input type="text3" name="anu_antiguitat" size="40"></br>
-	Descripcion:</br><input type="text3" name="anu_descripcio"></br></br>
-	Numero Serie:</br> <input type="text3" name="anu_numero_serie" size="40"></br></br>
-	Foto:</br> <input type="file" name="anu_foto" size="50" /></br></br>
-	Compensacion:</br> <input type="text3" name="anu_compensacio" size="40"></br></br>
+	Titulo:</br><input type="text3" name="anu_titol" size="36" style="width: 70%;"></br>
+	Fecha Anuncio:</br><input type="date" name="anu_data_anunci"  onkeypress="return false" style="width: 70%;"></br>
+	Fecha Robo:</br><input type="date" name="anu_data_robatori" placeholder="dd/mm/yyyy" style="width: 70%;"></br>
+	Ubicacion Robo:</br> <input type="text3" name="anu_ubicacio_robatori" size="40" style="width: 70%;"></br>
+	Descripcion Robo:</br><input type="text3" name="anu_descripcio_robatori" size="40" style="width: 70%;"></br>
+	Marca:</br> <input type="text3" name="anu_marca" size="40" style="width: 70%;"></br>
+	Modelo:</br> <input type="text3" name="anu_model" size="40" style="width: 70%;"></br>
+	Color:</br> <input type="text3" name="anu_color" size="40" style="width: 70%;"></br>
+	Antiguedad:</br> <input type="text3" name="anu_antiguitat" size="40" style="width: 70%;"></br>
+	Descripcion:</br><input type="text3" name="anu_descripcio" size="40" style="width: 70%;"></br></br>
+	Numero Serie:</br> <input type="text3" name="anu_numero_serie" size="40" style="width: 70%;"></br></br>
+	Foto:</br> <input type="file" name="anu_foto" size="50"  style="width: 70%;"></br></br>
+	Compensacion:</br> <input type="text3" name="anu_compensacio" size="40" style="width: 70%;"></br></br>
 	Talla:</br> <select name='anu_talla' style=" width: 60px" > <option>S</option><option>M</option><option>L</option><option>XL</option></select></br>
 	</br><input type="submit" name="enviar">
 	</form>
