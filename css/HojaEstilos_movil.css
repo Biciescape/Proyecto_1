@@ -1,39 +1,55 @@
+#img{
+	float:center;
+	width:230px;
+}
 
+#busqueda{
+	width:70%;
+}
 
 .divcentrar{
 	text-align: center;
-	margin-left: 8%;
 }
 
 .registro{
 	border: 1px solid #e8e8e8;
 	background-color:white;
 	padding:2px;
+	margin:3px;
 }
 
-.div{
+.divcentrarderecha{
+	float: right;
+}
 
-	background-color:blue; 
+.estilo{
 	width: 100%;
-	float: left;
-
+    height: 320px;
+    float: left;
+    color: #666;
+    background-color: white;
+    margin: 10px;
+    margin-left: 25px;
+    border: 1px solid #e8e8e8;
 }
 
 .div2{
 
 	font-family: 'Open Sans';
 	color: white;
+	float: left;
 	background-color:black;
-	width: 15%;
+	width: 90%;
 	border: 1px solid #e8e8e8;
 	padding:1%;
-	top:116px;
 	left:8px; 
-	position: absolute; 
-	visibility: visible;
-	margin: 60px 10px;
+	margin: 10px;
 	
 }
+
+
+
+
 
 .div3{
 	color:#302A29;
@@ -47,49 +63,41 @@
 	background-color:white;
 	width: 90%;
 	height: 40px;
-	text-align:left; 
+	text-align:center; 
 	float: center;
-	padding: 30px;
+	padding-top:40px;
+	padding-right:0px;
 	vertical-align: middle;
-	
-
+	margin-bottom: 80px;
 }
-.estilo{
-	width: 27.5%; 
-	height: 400px; 
-	float: left; 
-	color: #666;
-	background-color: white; 
-	margin: 10px; 
-	border: 1px solid #e8e8e8;
-}
-
 .div5{
+	margin-top: 50px;
 	height:60%; 
 	width:80%; 
-	left:260px; 
+	left:20%; 
+	float:center;
 	top: 116px; 
-	position: absolute; 
-	visibility: visible;
+
 	z-index:10;
 	text-align: center;
 
 }
 
 .color{
-	width: 15%;
+	width: 90%;
 	background-color: #df0005;
 	color:white;
 	font-size: 14px;
 	font-family: 'Open Sans';
-	float: left;
+	float: center;
 	text-align: left;
-	margin: 8px 20px 9px 10px;
-	padding: 1.15%;
+	padding: 1.5%;
+	padding-left:1.2%;
+	margin: 10px;
 }
 
 .color1{
-	width: 16%;
+	width: 19%;
 	background-color: #df0005;
 	color:white;
 	font-size: 14px;
@@ -103,18 +111,15 @@
 }
 
 .color2{
-	width: 18%;
+    width: 90%;
     background-color: #df0005;
     color: white;
     font-size: 14px;
     font-family: 'Open Sans';
-    float: left;
-    text-align: right;
-    top: 41px;
-    padding: 1.15%;
-    position: absolute;
-    visibility: visible;
-    right: 2.5%;
+    text-align: center;
+    margin: 10px;
+    padding: 9px;
+    margin-bottom: 0px;
 }
 
 p.caracteristicasProductoPrincipal{
@@ -148,9 +153,10 @@ div.caracteristicasProductoDetalle{
 	text-align: center;
 	font-size: 15px; 
 	font-style: bold;
-	margin-top:25px;
+	padding: 7px;
 	font-family: Open Sans;
 	color: #666;
+	margin-top:25px;
 }
 
 .logo{
@@ -180,46 +186,45 @@ input[type=text2] {
 }
 
 .imagendetalle{
-	width:33%;
-	float:left;
+	width: 200px;
+    height: 245px;
+	float:center;
 	border: 1px solid #ccc;
-	margin:7px;
+	margin:10px;
 }
 
 .divdetalle{
-	width:70%;
+	width:90%;
 	margin: 0 auto;
 }
 .divtext{
-	
-	font-size: 14px; 
+	font-size: 11px; 
 	padding-bottom: 15px;
 	font-family: Open Sans;
 	color: black;
 	float:center;
-	width:90%;
-	height: 400px;
+	width:100%;
+	height: 90%;
 	border: 1px solid #ccc;
+	margin: 0 auto;
+	text-align: center;
 }
+
 
 .textoendetalle {
 	padding:10px;
+	float: center;
 }
 
 .divtitulo{
 	font-weight: bold;
-
-	border: 1px solid #ccc
-}
-
-.divtitulo{
 	background-color: #ccc;
 	color:#df0005;
-	font-size: 19px;
+	font-size: 16px;
 	font-family: 'Open Sans';
 	float: center;
 	text-align: center;
-	padding:10px;
 	margin-bottom:10px;
+	padding:10px;
 
 }

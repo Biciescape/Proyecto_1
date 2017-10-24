@@ -2,36 +2,37 @@
 
 .divcentrar{
 	text-align: center;
-	margin-left: 8%;
+	margin-left: 7%;
 }
 
 .registro{
 	border: 1px solid #e8e8e8;
-	background-color:white;
-	padding:2px;
+    background-color: white;
+    margin-top: 6px;
+    padding: 5px;
 }
 
-.div{
-
-	background-color:blue; 
-	width: 100%;
-	float: left;
-
+.estilo{
+	width: 31.5%; 
+	height: 400px; 
+	float: left; 
+	color: #666;
+	background-color: white; 
+	margin: 10px; 
+	border: 1px solid #e8e8e8;
 }
 
 .div2{
 
 	font-family: 'Open Sans';
 	color: white;
+	float: center;
 	background-color:black;
 	width: 15%;
 	border: 1px solid #e8e8e8;
 	padding:1%;
-	top:116px;
 	left:8px; 
-	position: absolute; 
-	visibility: visible;
-	margin: 60px 10px;
+	margin: 10px;
 	
 }
 
@@ -51,23 +52,14 @@
 	float: center;
 	padding: 30px;
 	vertical-align: middle;
-	
 
 }
-.estilo{
-	width: 27.5%; 
-	height: 400px; 
-	float: left; 
-	color: #666;
-	background-color: white; 
-	margin: 10px; 
-	border: 1px solid #e8e8e8;
-}
-
 .div5{
+	
 	height:60%; 
 	width:80%; 
-	left:260px; 
+	left:20%; 
+	float:center;
 	top: 116px; 
 	position: absolute; 
 	visibility: visible;
@@ -82,7 +74,7 @@
 	color:white;
 	font-size: 14px;
 	font-family: 'Open Sans';
-	float: left;
+	float: center;
 	text-align: left;
 	margin: 8px 20px 9px 10px;
 	padding: 1.15%;
@@ -90,31 +82,32 @@
 
 .color1{
 	width: 16%;
-	background-color: #df0005;
-	color:white;
-	font-size: 14px;
-	font-family: 'Open Sans';
-	float: left;
-	text-align: right;
-	padding: 1.15%;
-	position: absolute;
-	visibility: visible;
-	right:8px;
-}
-
-.color2{
-	width: 18%;
     background-color: #df0005;
     color: white;
     font-size: 14px;
     font-family: 'Open Sans';
     float: left;
-    text-align: right;
-    top: 41px;
+    text-align: center;
+    top: 5px;
     padding: 1.15%;
     position: absolute;
     visibility: visible;
-    right: 2.5%;
+    right: 8px;
+}
+
+.color2{
+	    width: 16%;
+    background-color: #df0005;
+    color: white;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    float: left;
+    text-align: center;
+    top: 108px;
+    padding: 1.15%;
+    position: absolute;
+    visibility: visible;
+    right: 35px;
 }
 
 p.caracteristicasProductoPrincipal{
@@ -148,9 +141,10 @@ div.caracteristicasProductoDetalle{
 	text-align: center;
 	font-size: 15px; 
 	font-style: bold;
-	margin-top:25px;
+	padding: 7px;
 	font-family: Open Sans;
 	color: #666;
+	margin-top:25px;
 }
 
 .logo{
@@ -180,27 +174,29 @@ input[type=text2] {
 }
 
 .imagendetalle{
-	width:33%;
+	    width: 31%;
+    height: 83%;
 	float:left;
 	border: 1px solid #ccc;
 	margin:7px;
+	margin-right: 20px;
 }
 
 .divdetalle{
-	width:70%;
-	margin: 0 auto;
+	    width: 70%;
+    margin-left: 5%;
 }
 .divtext{
-	
-	font-size: 14px; 
+	font-size: 11px; 
 	padding-bottom: 15px;
 	font-family: Open Sans;
 	color: black;
 	float:center;
-	width:90%;
-	height: 400px;
-	border: 1px solid #ccc;
+	width:100%;
+	height: 324px;
+	border: 1px solid #ccc
 }
+
 
 .textoendetalle {
 	padding:10px;
@@ -208,18 +204,13 @@ input[type=text2] {
 
 .divtitulo{
 	font-weight: bold;
-
-	border: 1px solid #ccc
-}
-
-.divtitulo{
 	background-color: #ccc;
 	color:#df0005;
-	font-size: 19px;
+	font-size: 16px;
 	font-family: 'Open Sans';
 	float: center;
 	text-align: center;
-	padding:10px;
 	margin-bottom:10px;
+	padding:10px;
 
 }

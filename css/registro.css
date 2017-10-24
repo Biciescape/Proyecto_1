@@ -1,0 +1,61 @@
+.centrar{
+	text-align: center;
+	margin:4%;
+
+}
+
+.titulo1{
+	margin-top: 2%;
+	background-color: #df0005;
+	color:white;
+	font-size: 14px;
+	font-family: 'Open Sans';
+	float: center;
+	text-align: center;
+	padding: 20px;
+}
+
+.titulop{
+	size: 19px;
+}
+
+.registro{
+	width: 95%;
+	height:375px;
+	float:left;
+	border:1px solid #ccc;
+	padding: 20px;
+	margin-top: 1%;
+	color:black;
+	background-color: #ccc;
+	font-family: 'Open Sans';
+	font-size:13px;
+	margin-bottom: 30px;
+}
+
+.inicio{
+	width: 40%;
+	height:375px;
+	float:left;
+	float:right;
+	border:1px solid #ccc;
+	padding: 30px;
+	margin-top: 1%;
+	color:black;
+	background-color: #ccc;
+	font-family: 'Open Sans';
+	font-size:13px;
+}
+
+.imagen{
+	margin: 0px auto;
+	width: 200px;
+
+}
+
+button{
+	background-color: white;
+	border:1px solid black;
+	color: black;
+	font-family: 'Open Sans';
+}

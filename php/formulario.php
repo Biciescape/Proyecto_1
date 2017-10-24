@@ -3,22 +3,35 @@
 <head>
 	<title>Inicio</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-	<link rel="stylesheet" type="text/css" href="css/HojaEstilos.css">
+	<link rel="stylesheet" type="text/css" href="css/HojaEstilos.css" media="screen and (min-width:1317px)">
+	<link rel="stylesheet" type="text/css" href="css/HojaEstilos_medio.css" media="screen and (min-width:1000px) and (max-width:1316px)">
+	<link rel="stylesheet" type="text/css" href="css/HojaEstilos_pequeño.css" media="screen and (min-width:691px) and (max-width:999px)">
+	<link rel="stylesheet" type="text/css" href="css/HojaEstilos_movil.css" media="screen  and (max-width:690px)">
 	<meta charset="utf-8">
 
 </head>
-<body>
+<body
 	<!--Pasamos el formulario en la página formulario.php !-->
 	<form action="formulario.php" method="REQUEST">
+		<div class='color2'>
+					¿Le han robado la bici?    
+					<form action="addanun.php" method="REQUEST">
+						<input type="submit" name="nuevo" value='Registro'>
+					</form>
+					<!--<a href="addanun.php"><button class="registro">Crear anuncio</button></a><br>-->
+				</div>
 		<div class="div4">
 			<span>
-				<img src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" >
-				<input placeholder="Escriba aquí el anuncio que quiera buscar" type="text2" name="producto" size="40"">
+				<a href="formulario.php"><img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" ></a>
+				<input id="busqueda" placeholder="Escriba aquí el anuncio que quiera buscar" type="text2" name="producto" size="40"">
 				<button type="submit" style="padding: 0px; border-width: 0px; background-color: white; ">
 					<img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px">
 				</button>
+				
 			</span>
+
 		</div>
+
 	</form>
 	<form action="formulario.php" method="REQUEST">
 		<div class="color">
@@ -295,15 +308,21 @@
 								//echo "$total";
 								//Mostramos los detalles del anuncio
 
+								
+
 								while($anunci=mysqli_fetch_array($consulta)){
-									echo "<div style='width: 27%; height: 370px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
+									echo "<div class='divcentrar'>";
+									echo "<a href='anuncio.php?id=$anunci[anu_id]'>";
+									echo "<div class='estilo'>";
 									echo "<div class='fuenteProducto'>";
 									echo "<b>$anunci[anu_titol]</b>";
 									echo "</div>";
 									echo "<div>";
-									echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
+									echo "<img id='imagenProducto' src='img/$anunci[anu_foto]'>";
 									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
 									echo "</div>";
+									echo "</div>";
+									echo"</a>";
 									echo "</div>";
 									/*echo "<div class='caracteristicasProductoDetalle'>";*/
 									$ok=true;
@@ -337,35 +356,30 @@
 							
 							if(mysqli_num_rows($resultados)>0 or $_REQUEST['producto'] == ""){
 							//$anunci = mysqli_fetch_array($resultados);
-								?>
 
-
-								<div class="color1">
-									REGISTRO
-								</div>
-
-								<div class="divderecha" >
-									<form action="formusuario.php" method="POST">
-										<br><b>¿También le han robado la bici?</b><br><br>
-										<button class="registro" value="registrarse">Registrarse</button><br>
-									</form>
-									<form action="formusuario.php" method="POST">
-										<br><br>
-										<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>
-										<button class="registro" value="iniciarsesion">Iniciar sesión</button>
-										
-									</form>
-								</div>
-
-								<?php
 							// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
+								
+
+								/*echo "<div class='div3'>";
+									echo "<select>";
+										echo "<option value='Cualquiera'>Visualizar</option>";
+										echo "<option value='mostrar_5'>5</option>";
+										echo "<option value='mostrar_10'>10</option>";
+										echo "<option value='mostrar_15'>15</option>";
+									echo "</select>";
+								echo "</div>"; */
+								
 								while($anunci = mysqli_fetch_array($resultados)){
-									echo "<div class='divcentrar'>";
-									echo "<div style='width: 31.5%; height: 420px; float: left; color: #666; background-color: white; margin: 10px; border: 1px solid #e8e8e8;'>";
+
+
+								echo "<div class='divcentrar'>";
+									echo "<a href='anuncio.php?id=$anunci[anu_id]'>";
+									echo "<div class='estilo'>";
 									echo "<div class='fuenteProducto'>";
 									echo "<b>$anunci[anu_titol]</b>";
 									echo "</div>";
 									echo "<div>";
+
 									echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
 									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
 									echo "</div>";
@@ -386,6 +400,17 @@
 									<button class="registro">Iniciar sesión</button>
 								</div>
 								<?php
+
+									echo "<img id='imagenProducto' src='img/$anunci[anu_foto]'>";
+									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
+									echo "</div>";
+									echo "</div>";
+									echo"</a>";
+									echo "</div>";
+								}
+							} else {
+							
+
 								echo "No hay nada que mostrar: 0";
 							}							
 							
