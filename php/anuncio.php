@@ -15,18 +15,26 @@
 <body>
 	<!--Pasamos el formulario en la página formulario.php !-->
 	<form action="formulario.php" method="REQUEST">
+		<div class='color2'>
+					¿Le han robado la bici?    
+					<form action="addanun.php" method="REQUEST">
+						<input type="submit" name="nuevo" value='Registro'>
+					</form>
+					<!--<a href="addanun.php"><button class="registro">Crear anuncio</button></a><br>-->
+				</div>
 		<div class="div4">
 			<span>
-				<img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" >
-				<input placeholder="Escriba aquí el anuncio que quiera buscar" type="text2" name="producto" size="40"">
+				<a href="formulario.php"><img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" ></a>
+				<input id="busqueda" placeholder="Escriba aquí el anuncio que quiera buscar" type="text2" name="producto" size="40"">
 				<button type="submit" style="padding: 0px; border-width: 0px; background-color: white; ">
 					<img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px">
 				</button>
+				
 			</span>
-		</div>
-	</form>
-	
 
+		</div>
+
+	</form>
 
 	<?php
 

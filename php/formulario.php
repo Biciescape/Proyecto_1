@@ -10,18 +10,28 @@
 	<meta charset="utf-8">
 
 </head>
-<body>
+<body
 	<!--Pasamos el formulario en la página formulario.php !-->
 	<form action="formulario.php" method="REQUEST">
+		<div class='color2'>
+					¿Le han robado la bici?    
+					<form action="addanun.php" method="REQUEST">
+						<input type="submit" name="nuevo" value='Registro'>
+					</form>
+					<!--<a href="addanun.php"><button class="registro">Crear anuncio</button></a><br>-->
+				</div>
 		<div class="div4">
 			<span>
-				<img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" >
+				<a href="formulario.php"><img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" ></a>
 				<input id="busqueda" placeholder="Escriba aquí el anuncio que quiera buscar" type="text2" name="producto" size="40"">
 				<button type="submit" style="padding: 0px; border-width: 0px; background-color: white; ">
 					<img src="img/buscador.png" alt="submit" style="vertical-align: middle;" width="45px" height="45px">
 				</button>
+				
 			</span>
+
 		</div>
+
 	</form>
 	<form action="formulario.php" method="REQUEST">
 		<div class="color">
@@ -298,15 +308,7 @@
 								//echo "$total";
 								//Mostramos los detalles del anuncio
 
-								echo"<div class='color2'>";
-								echo"AÑADIR ANUNCIO";
-								echo"</div>";
-
-								echo"<div class='divderecha'>";
-									echo"<br><b>¿También le han robado la bici?</b><br><br><br>";
-									echo"<a href='addanun.php'><button class='registro'>Añadir anuncio</button></a><br>";
-
-								echo"</div>";
+								
 
 								while($anunci=mysqli_fetch_array($consulta)){
 									echo "<div class='divcentrar'>";
@@ -355,18 +357,6 @@
 							if(mysqli_num_rows($resultados)>0 or $_REQUEST['producto'] == ""){
 							//$anunci = mysqli_fetch_array($resultados);
 								
-							
-							
-								echo"<div class='color2'>";
-								echo"AÑADIR ANUNCIO";
-								echo"</div>";
-
-								echo"<div class='divderecha'>";
-									echo"<br><b>¿También le han robado la bici?</b><br><br><br>";
-									echo"<a href='addanun.php'><button class='registro'>Añadir anuncio</button></a><br>";
-
-								echo"</div>";
-
 							
 							// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
 								

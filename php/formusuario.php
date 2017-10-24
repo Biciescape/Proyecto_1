@@ -8,13 +8,13 @@
 	<?php
 		
 		echo "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>";
+		echo"<link rel='stylesheet' type='text/css' href='css/Registro.css'>";
 
-		echo"<link rel='stylesheet' type='text/css' href='css/registro.css'>";
-
-		if ($_POST['registrarse']="registrarse"){
 			
 			echo"<div class='centrar'>";
-			echo"<img class='imagen' src='img/logo.png'>";
+			echo "<a href='formulario.php'>";
+			echo"<img class='imagen' id='img' src='img/logo.png'>";
+			echo "</a>";
 			echo"<div class='titulo1'>";	
 			echo"<b><p style='left:10px;'>REGISTRO DE USUARIO</p></b>";
 			echo "<a href='formulario.php'><button>Volver a la búsqueda avanzada</button></a>";
@@ -62,47 +62,7 @@
 					header("Location:formusuario.php");
 				}
 			}//Fin del if de la introducción de datos
-		}
-
-		if($_POST['iniciarsesion']="iniciarsesion"){
-
-
-			echo "<form class='inicio' method='POST' action='formusuario.php'>";
-			echo "<p class='titulop'>INICIA SESIÓN</p>";
-			echo "Introduzca su e-mail: <br>";
-			echo "<input type='text' name='info_email' required><br><br>";
-			echo "Introduzca su password: <br>";
-			echo "<input type='password' max='20' min='4' name='info_pwd' required><br><br>";
-			echo "<input type='submit'>";
-			echo "</form>";
-
-			//Esto solo se muestra una vez comprobamos que se ha insertado un email y un pwd
-			if ( (isset($_POST['info_email'])) && (isset($_POST['info_pwd'])) ) {
-
-				$conexion=mysqli_connect("localhost", "root", "", "bd_biciescapa");
-
-				$info_email=$_POST['info_email'];
-				$pwd=$_POST['info_pwd'];
-
-				//Guardamos el codigo en una variable SQL
-				$j="SELECT info_email, info_pwd FROM info WHERE info_email='$info_email' AND info_pwd='$info_pwd'";
-
-				//Hacemos la consulta a nuestra bdd con el codigo SQL
-				$consulta = mysqli_query($conexion, $j);
-
-				//Guardamos la cantidad de coincidencias en la variable $total
-				$total=mysqli_num_rows($consulta);
-
-				//Nos aseguramos de que haya coincidencias
-				if ($total==0) {
-					alert('Ha escrito una contraseña o un email equivocado');
-					$_POST['iniciarsesion']="iniciarsesion";
-					header("Location:formusuario.php");
-				}//fin del if
-			}//Fin del isset
-		}//Fin del inicio de sesion
-		echo "</div>";
-
+		
 
 
 		?>
