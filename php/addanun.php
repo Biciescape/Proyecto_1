@@ -112,10 +112,24 @@
 </head>
 <body>
 	<!-- enctype="multipart/form-data" necesario para subir archivos, crea la forma que permite explorar en su búsqueda en el equipo local -->
-	<?
+	<?php
 $fecha = date("d M Y, H:i");
+	echo "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>";
+		echo"<link rel='stylesheet' type='text/css' href='css/Registro.css'>";
+
+		echo"<div class='centrar'>";
+			echo "<a href='formulario.php'>";
+			echo"<img class='imagen' id='img' src='img/logo.png'>";
+			echo "</a>";
+			echo"<div class='titulo1'>";	
+			echo"<b><p style='left:10px;'>Creación de anuncios</p></b>";
+			echo "<a href='formulario.php'><button>Volver a la búsqueda avanzada</button></a>";
+			echo"</div>";
+
 ?>
-	<form action="addanun.php" name="addnew" method="POST" onsubmit="return validar();" enctype="multipart/form-data">
+	<form action="addanun.php" class=registro name="addnew" method="POST" onsubmit="return validar();" enctype="multipart/form-data">
+
+		<?php echo "<p class='titulop'>CREA UNA CUENTA</p>"; ?>
 	Titulo:</br><input type="text3" name="anu_titol" size="36"></br>
 	Fecha Anuncio:</br><input type="date" name="anu_data_anunci class="input-medium search-query"  onkeypress="return false"></br>
 	Fecha Robo:</br><input type="date" name="anu_data_robatori" placeholder="dd/mm/yyyy"></br>
@@ -126,9 +140,9 @@ $fecha = date("d M Y, H:i");
 	Color:</br> <input type="text3" name="anu_color" size="40"></br>
 	Antiguedad:</br> <input type="text3" name="anu_antiguitat" size="40"></br>
 	Descripcion:</br><textarea rows="6" cols="38" name="anu_descripcio_robatori" style="resize:none;"></textarea></br>
-	Numero Serie:</br> <input type="text3" name="anu_numero_serie" size="40"></br>
-	Foto:</br> <input type="file" name="anu_foto" size="50" /></br>
-	Compensacion:</br> <input type="text3" name="anu_compensacio" size="40"></br>
+	Numero Serie:</br> <input type="text3" name="anu_numero_serie" size="40"></br></br>
+	Foto:</br> <input type="file" name="anu_foto" size="50" /></br></br>
+	Compensacion:</br> <input type="text3" name="anu_compensacio" size="40"></br></br>
 	Talla:</br> <select name='anu_talla' style=" width: 60px" > <option>S</option><option>M</option><option>L</option><option>XL</option></select></br>
 	</br><input type="submit" name="enviar">
 	</form>
