@@ -57,16 +57,17 @@ body{
 .div3{
 	color:#302A29;
 	background-color: white;
-	float: right;
-
-
+	margin-left:604px;
+	width:13%;
+	text-align: right;
+	font-family: 'Open Sans';
 }
 .div4{
 	background-color:white;
 	width: 90%;
 	height: 40px;
 	text-align:left; 
-	float: left;
+	float: center;
 	padding: 30px;
 	vertical-align: middle;
 
@@ -187,3 +188,39 @@ input[type=text2] {
     box-sizing: border-box;
 }
 
+.imagendetalle{
+	height: 30%;
+	width:30%;
+	float:left;
+	border: 1px solid #ccc;
+	margin-right: 20px;
+}
+
+.divdetalle{
+	width:70%;
+	margin: 0 auto;
+}
+.divtext{
+	
+	font-size: 14px; 
+	font-style: bold;
+	padding-bottom: 15px;
+	font-family: Open Sans;
+	color: black;
+	float:center;
+	width:90%;
+	height: 324px;
+	border: 1px solid #ccc
+}
+
+.divtitulo{
+	background-color: #ccc;
+	color:#df0005;
+	font-size: 19px;
+	font-family: 'Open Sans';
+	float: center;
+	text-align: center;
+	padding:10px;
+	margin-bottom:10px;
+
+}
