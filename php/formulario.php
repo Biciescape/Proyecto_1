@@ -12,14 +12,15 @@
 </head>
 <body
 	<!--Pasamos el formulario en la página formulario.php !-->
-	<form action="formulario.php" method="REQUEST">
-		<div class='color2'>
+	<div class='color2'>
 					¿Le han robado la bici?    
 					<form action="addanun.php" method="REQUEST">
 						<input type="submit" name="nuevo" value='Registro'>
 					</form>
 					<!--<a href="addanun.php"><button class="registro">Crear anuncio</button></a><br>-->
 				</div>
+	<form action="formulario.php" method="REQUEST">
+		
 		<div class="div4">
 			<span>
 				<a href="formulario.php"><img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" ></a>
@@ -168,7 +169,7 @@
 						echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
 						exit;
 					} else {
-
+					
 
 						if (isset($_REQUEST['marca'])) {
 							$marca=$_REQUEST['marca'];
@@ -214,78 +215,78 @@
 							$ok=false;
 						}else{
 
-							if ($anuncio!=="") {
-								$string="WHERE anu_titol LIKE '%$anuncio%'";
-								$and=true;
-							}
+						if ($anuncio!=="") {
+							$string="WHERE anu_titol LIKE '%$anuncio%'";
+							$and=true;
+						}
 
-							if($color!=="Cualquiera"){
-								$string1="WHERE anu_color='$color'";
-								if ($and==true) {
-									$string1="AND anu_color='$color'";
-								}		
-								$and1=true;
-							}
+						if($color!=="Cualquiera"){
+							$string1="WHERE anu_color='$color'";
+							if ($and==true) {
+								$string1="AND anu_color='$color'";
+							}		
+							$and1=true;
+						}
 
 							//Comprobamos lo mismo con marca
-							if($marca!=="Cualquiera"){
-								$string2="WHERE anu_marca='$marca'";
+						if($marca!=="Cualquiera"){
+							$string2="WHERE anu_marca='$marca'";
 								//Si se ha elegido una consulta anterior se enlaza con un AND
-								if (($and==true)||($and1==true)) {
-									$string2="AND anu_marca='$marca'";
-								}
-								$and2=true;
+							if (($and==true)||($and1==true)) {
+								$string2="AND anu_marca='$marca'";
 							}
+							$and2=true;
+						}
 
 							//Se repite el proceso
-							if ($localidad!=="Cualquiera") {
-								$string3="WHERE anu_ubicacio_robatori='$localidad'";
-								if (($and==true)||($and1==true)||($and2==true)) {
-									$string3="AND anu_ubicacio_robatori='$localidad'";
-								}
-								$and3=true;
+						if ($localidad!=="Cualquiera") {
+							$string3="WHERE anu_ubicacio_robatori='$localidad'";
+							if (($and==true)||($and1==true)||($and2==true)) {
+								$string3="AND anu_ubicacio_robatori='$localidad'";
 							}
+							$and3=true;
+						}
 
-							/*En el caso de los checkboxs guardamos las variables en un array (al que hemos guardado en la variable tal para usarlo con más facilidad)*/
-							if (isset($_REQUEST['talla'])) {
-								$tal=$_REQUEST['talla'];
-							}
+						/*En el caso de los checkboxs guardamos las variables en un array (al que hemos guardado en la variable tal para usarlo con más facilidad)*/
+						if (isset($_REQUEST['talla'])) {
+							$tal=$_REQUEST['talla'];
+						}
 
-							if (isset($_REQUEST['talla'])) {
+						if (isset($_REQUEST['talla'])) {
 								//Hacemos que guarde los valores (las tallas seleccionadas) en la variable $t
-								foreach ($tal as $t) {
+							foreach ($tal as $t) {
 									//Ya que sólo son 4 tallas, contamos los valores de la array
-									if (count($tal)==1) {
+								if (count($tal)==1) {
 									//En el caso en que sea una lo dejamos con un WHERE y la talla (dando por hecho que no han buscado otra cosa como marca, ciudad, etc).
-										$string4="WHERE anu_talla='$t'";
+									$string4="WHERE anu_talla='$t'";
 										//En el caso en el que ya se hayan hecho otras busquedas lo añadimos con un AND
-										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
-											$string4="AND anu_talla='$t'";
-										}
+									if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+										$string4="AND anu_talla='$t'";
 									}
+								}
 									//En el caso en que sean más de un valor se ha enlazar con un or según la posición
-									if (count($tal)==2) {
+								if (count($tal)==2) {
 										//Por eso si sabemos que los valores del array son solo dos los cogemos por la posición
-										$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
+									$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
 										//De nuevo: si ya han elegido otros filtros, se añade con un and, adelantandonos con las posiciones.
-										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
-											$string4="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
-										}
+									if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+										$string4="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]'";
 									}
+								}
 									//A partir de aquí es el mismo proceso una y otra vez
-									if (count($tal)==3) {
-										$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
-										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
-											$string4="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
-										}
+								if (count($tal)==3) {
+									$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
+									if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+										$string4="AND anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]'";
 									}
+								}
 
-									if (count($tal)==4) {
-										$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]'";
-										if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
-											$string4="AND anu_talla='$tal[0]' OR (anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]')";
-										}
+								if (count($tal)==4) {
+									$string4="WHERE anu_talla='$tal[0]' OR anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]'";
+									if (($and==true)||($and1==true)||($and2==true)||($and3==true)) {
+										$string4="AND anu_talla='$tal[0]' OR (anu_talla='$tal[1]' OR anu_talla='$tal[2]' OR anu_talla='$tal[3]')";
 									}
+								}
 								}//fin del foreach
 							}
 
@@ -336,15 +337,15 @@
 						
 						if($ok==false){
 
-							if (isset($_REQUEST['producto'])){
-								if($_REQUEST['producto'] != ""){
-									$producto = $_REQUEST['producto'];
-									$query = "SELECT * FROM anunci WHERE anu_titol like '%".$producto ."%'";	
-									$resultados = mysqli_query($conexion, $query);	
-									$numero = mysqli_num_rows($resultados);
-								}else{
-									echo "No hay nada que mostrar: 0";
-								}
+						if (isset($_REQUEST['producto'])){
+							if($_REQUEST['producto'] != ""){
+								$producto = $_REQUEST['producto'];
+								$query = "SELECT * FROM anunci WHERE anu_titol like '%".$producto ."%'";	
+								$resultados = mysqli_query($conexion, $query);	
+								$numero = mysqli_num_rows($resultados);
+							}else{
+								echo "No hay nada que mostrar: 0";
+							}
 							}else{
 								$query = "SELECT * FROM anunci order by anu_data_anunci DESC";
 								$resultados = mysqli_query($conexion, $query);
@@ -356,7 +357,8 @@
 							
 							if(mysqli_num_rows($resultados)>0 or $_REQUEST['producto'] == ""){
 							//$anunci = mysqli_fetch_array($resultados);
-
+								
+							
 							// En el while mostramos la consulta hasta que acabe,lo metemos en un div los estilos para meter los anuncios
 								
 
@@ -370,8 +372,6 @@
 								echo "</div>"; */
 								
 								while($anunci = mysqli_fetch_array($resultados)){
-
-
 								echo "<div class='divcentrar'>";
 									echo "<a href='anuncio.php?id=$anunci[anu_id]'>";
 									echo "<div class='estilo'>";
@@ -379,28 +379,6 @@
 									echo "<b>$anunci[anu_titol]</b>";
 									echo "</div>";
 									echo "<div>";
-
-									echo "<img id='imagenProducto' src='img/$anunci[anu_foto].jpg'>";
-									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
-									echo "</div>";
-									echo "</div>";
-									echo "</div>";
-								}
-							} else {
-								?>
-								<div class="color1">
-									REGISTRO
-								</div>
-
-								<div class="divderecha" >
-									<br><b>¿También le han robado la bici?</b><br><br>
-									<button class="registro">Registrarse</button><br>
-									<br><br>
-									<br><b>¿Ya tiene una cuenta de usuario?</b><br><br>
-									<button class="registro">Iniciar sesión</button>
-								</div>
-								<?php
-
 									echo "<img id='imagenProducto' src='img/$anunci[anu_foto]'>";
 									echo "<p class='caracteristicasProductoPrincipal'>Compensación: <b style='color:#df0005;'>$anunci[anu_compensacio]€</b></p><br>";
 									echo "</div>";
@@ -410,12 +388,12 @@
 								}
 							} else {
 							
-
+								
 								echo "No hay nada que mostrar: 0";
 							}							
 							
 						}//Fin del else de la conexion
-					}
+						}
 					?>
 				</div>
 

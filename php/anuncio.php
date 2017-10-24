@@ -14,14 +14,15 @@
 </head>
 <body>
 	<!--Pasamos el formulario en la página formulario.php !-->
-	<form action="formulario.php" method="REQUEST">
-		<div class='color2'>
+	<div class='color2'>
 					¿Le han robado la bici?    
 					<form action="addanun.php" method="REQUEST">
 						<input type="submit" name="nuevo" value='Registro'>
 					</form>
 					<!--<a href="addanun.php"><button class="registro">Crear anuncio</button></a><br>-->
 				</div>
+	<form action="formulario.php" method="REQUEST">
+		
 		<div class="div4">
 			<span>
 				<a href="formulario.php"><img id="img" src="img/logo.png" style="vertical-align: middle; margin-left: 2.3%; margin-right:2.3%;" ></a>
@@ -63,7 +64,7 @@
 				echo "<div class='divtitulo'>";
 				echo "Nombre: $anunci[anu_titol]<br>";
 				echo "</div>";
-				echo "<img class='imagendetalle' src='img/$anunci[anu_foto].jpg'>";
+				echo "<img class='imagendetalle' src='img/$anunci[anu_foto]'>";
 				echo "<div class='textoendetalle'>";
 				echo "<b>Fecha anuncio:</b> $anunci[anu_data_anunci]<br>";
 				echo "<b>Fecha robo:</b> $anunci[anu_data_robatori]<br>";

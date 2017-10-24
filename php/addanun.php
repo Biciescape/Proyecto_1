@@ -131,15 +131,15 @@ $fecha = date("d M Y, H:i");
 
 		<?php echo "<p class='titulop'>CREA UNA CUENTA</p>"; ?>
 	Titulo:</br><input type="text3" name="anu_titol" size="36"></br>
-	Fecha Anuncio:</br><input type="date" name="anu_data_anunci class="input-medium search-query"  onkeypress="return false"></br>
+	Fecha Anuncio:</br><input type="date" name="anu_data_anunci"  onkeypress="return false"></br>
 	Fecha Robo:</br><input type="date" name="anu_data_robatori" placeholder="dd/mm/yyyy"></br>
 	Ubicacion Robo:</br> <input type="text3" name="anu_ubicacio_robatori" size="40"></br>
-	Descripcion Robo:</br><textarea rows="6" cols="38" name="anu_descripcio_robatori" style="resize:none;"></textarea></br>
+	Descripcion Robo:</br><input type="text3" name="anu_descripcio_robatori"></br>
 	Marca:</br> <input type="text3" name="anu_marca" size="40"></br>
 	Modelo:</br> <input type="text3" name="anu_model" size="40"></br>
 	Color:</br> <input type="text3" name="anu_color" size="40"></br>
 	Antiguedad:</br> <input type="text3" name="anu_antiguitat" size="40"></br>
-	Descripcion:</br><textarea rows="6" cols="38" name="anu_descripcio_robatori" style="resize:none;"></textarea></br>
+	Descripcion:</br><input type="text3" name="anu_descripcio"></br></br>
 	Numero Serie:</br> <input type="text3" name="anu_numero_serie" size="40"></br></br>
 	Foto:</br> <input type="file" name="anu_foto" size="50" /></br></br>
 	Compensacion:</br> <input type="text3" name="anu_compensacio" size="40"></br></br>
