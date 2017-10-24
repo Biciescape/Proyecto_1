@@ -20,11 +20,11 @@
 }
 
 .registro{
-	width: 40%;
+	width: 95%;
 	height:375px;
 	float:left;
 	border:1px solid #ccc;
-	padding: 30px;
+	padding: 20px;
 	margin-top: 1%;
 	color:black;
 	background-color: #ccc;
@@ -49,6 +49,7 @@
 
 .imagen{
 	margin: 0px auto;
+	width: 200px;
 
 }
 

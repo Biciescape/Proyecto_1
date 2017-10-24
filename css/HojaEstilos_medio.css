@@ -7,9 +7,9 @@
 
 .registro{
 	border: 1px solid #e8e8e8;
-	background-color:white;
-	padding:5px;
-
+    background-color: white;
+    margin-top: 6px;
+    padding: 5px;
 }
 
 .estilo{
@@ -35,23 +35,6 @@
 	margin: 10px;
 	
 }
-
-.divderecha{
-	font-family: 'Open Sans';
-	color: white;
-	right:8px;
-	background-color:black;
-	height: 310px;
-	width: 16%;
-	border: 1px solid #e8e8e8;
-	padding:1%;
-	top:54px;
-	position: absolute;
-	visibility: visible;
-	margin-left: 20px;
-}
-
-
 
 .div3{
 	color:#302A29;
@@ -99,31 +82,32 @@
 
 .color1{
 	width: 16%;
-	background-color: #df0005;
-	color:white;
-	font-size: 14px;
-	font-family: 'Open Sans';
-	float: left;
-	text-align: right;
-	padding: 1.15%;
-	position: absolute;
-	visibility: visible;
-	right:8px;
+    background-color: #df0005;
+    color: white;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    float: left;
+    text-align: center;
+    top: 5px;
+    padding: 1.15%;
+    position: absolute;
+    visibility: visible;
+    right: 8px;
 }
 
 .color2{
-	width: 16%;
-	background-color: #df0005;
-	color:white;
-	font-size: 14px;
-	font-family: 'Open Sans';
-	float: left;
-	text-align: right;
-	top:5px;
-	padding: 1.15%;
-	position: absolute;
-	visibility: visible;
-	right:8px;
+	    width: 16%;
+    background-color: #df0005;
+    color: white;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    float: left;
+    text-align: center;
+    top: 108px;
+    padding: 1.15%;
+    position: absolute;
+    visibility: visible;
+    right: 35px;
 }
 
 p.caracteristicasProductoPrincipal{
@@ -199,8 +183,8 @@ input[type=text2] {
 }
 
 .divdetalle{
-	width:70%;
-	margin: 0 auto;
+	    width: 70%;
+    margin-left: 5%;
 }
 .divtext{
 	font-size: 11px; 
